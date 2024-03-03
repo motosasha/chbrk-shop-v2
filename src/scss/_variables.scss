@@ -1,13 +1,13 @@
 @use "sass:color";
 
 :root {
-  --color-black: #000;
-  --color-white: #fff;
+  --color-black: #000000;
+  --color-white: #ffffff;
   --body-color: var(--front-primary);
   --body-bg: var(--back-primary);
   --font-base: var(--font-sans);
   --font-sans:
-    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+    Onest, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
     "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
   --font-serif: Georgia, "Times New Roman", Times, serif;
@@ -16,18 +16,29 @@
   --font-size-base: 1rem;
   --font-weight-base: 400;
   --line-height-base: 1.25;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --front-primary: rgb(60 60 67 / 92%);
-    --back-primary: #fff;
-  }
-}
+  --header-height-d: 140px;
+  --header-height-tl: 160px;
+  --header-height-ti: 140px;
+  --header-height-t: 105px;
+  --back-blur-header: 12px;
+  --box-shadow-default: 0 4px 6px -2px rgba(0 0 0 / 5%), 0 10px 15px -3px rgba(0 0 0 / 10%);
+  --transition-default: 0.25s ease;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --front-primary: rgb(255 255 255 / 92%);
-    --back-primary: #19191e;
-  }
+  --white: #ffffff;
+  --white-transparent: rgba(255 255 255 / 95%);
+  --zinc-100: #f4f4f5;
+  --zinc-200: #e4e4e7;
+  --zinc-300: #d4d4d8;
+  --zinc-400: #a1a1aa;
+  --zinc-700: #3f3f46;
+  --orange-500: #f97316;
+  --purple-300: #d8b4fe;
+  --purple-700: #7e22ce;
+  --vk-brand-color: #4680c2;
+  --vk-brand-hover: #22558e;
+
+  --front-primary: var(--zinc-700);
+  --front-invert: var(--white);
+  --back-primary: var(--white);
 }

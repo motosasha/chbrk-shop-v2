@@ -1,0 +1,29 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/link-reset";
+@import "../../scss/mixins/text-styles";
+
+.vk-button {
+  $block-name: &; // #{$block-name}__element
+
+  @include link-reset;
+  @include vk-button;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 18px 5px 12px;
+  color: var(--front-invert);
+  white-space: nowrap;
+  background-color: var(--vk-brand-color);
+  border-radius: 5px;
+  transition: background-color var(--transition-default);
+
+  &:hover {
+    background-color: var(--vk-brand-hover);
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+  }
+}

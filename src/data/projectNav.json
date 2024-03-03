@@ -9,6 +9,21 @@
           "href": "index"
         }
       ]
+    },
+    {
+      "title": "Служебные страницы",
+      "pages": [
+        {
+          "title": "edging",
+          "description": "окантовка страницы",
+          "href": "edging"
+        },
+        {
+          "title": "edging (authorisation)",
+          "description": "окантовка страницы (вход выполнен)",
+          "href": "edging-authorisation"
+        }
+      ]
     }
   ]
 }

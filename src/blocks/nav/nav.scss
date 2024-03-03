@@ -1,0 +1,49 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/fluid";
+@import "../../scss/mixins/link-reset";
+@import "../../scss/mixins/list-reset";
+@import "../../scss/mixins/text-styles";
+
+.nav {
+  $block-name: &; // #{$block-name}__element
+
+  @media screen and (max-width: $screen-t) {
+    width: 100%;
+  }
+
+  &__inner {
+    @include list-reset;
+
+    display: flex;
+    gap: 60px;
+
+    @media screen and (max-width: $screen-tl) {
+      gap: fluid(50, 60, 992, 1280);
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      gap: fluid(25, 50, 576, 992);
+    }
+
+    @media screen and (max-width: $screen-t) {
+      gap: fluid(25, 50, 460, 576);
+      justify-content: center;
+    }
+
+    @media screen and (max-width: $screen-m) {
+      justify-content: space-between;
+    }
+  };
+
+  &__link {
+    @include link-reset;
+    @include edging-link;
+
+    color: var(--orange-500);
+    transition: color var(--transition-default);
+
+    &:hover {
+      color: var(--purple-700);
+    }
+  }
+}

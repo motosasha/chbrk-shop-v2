@@ -1,3 +1,5 @@
 @import "mixins/font-face";
 
-@include font-face("Inter", "Inter-Regular");
+@include font-face("Onest", "Onest-Regular");
+@include font-face("Onest", "Onest-Medium", 500);
+@include font-face("Onest", "Onest-Bold", 700);
