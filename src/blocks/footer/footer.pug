@@ -2,10 +2,9 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin footer(text, mods)
+mixin footer(mods)
 
   //- Принимает:
-  //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +footer("Текст", "some-mod")
@@ -22,5 +21,18 @@ mixin footer(text, mods)
 
   .footer(class=allMods)&attributes(attributes)
     .container
-      .footer__inner Page footer
-        block
+      .footer__inner
+        if isMainPage
+          .footer__logo: +logo
+        else
+          a.footer__logo(href="/"): +logo("footer")
+        .footer__links
+          +nav(json.mainNav)(class="footer__nav")
+          +vk-button("https://vk.com/4ebyrekshop")
+        .footer__info
+          each block in json.footer.info
+            .footer__info-block
+              .footer__info-title!= block.title
+              .footer__info-value!= block.value
+
+        .footer__copy!= json.footer.copy

@@ -1,6 +1,6 @@
 {
-  "name": "Project Builder",
-  "short_name": "PB",
+  "name": "Cheburek Shop",
+  "short_name": "CS",
   "icons": [
     {
       "src": "/img/favicon/favicon-192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone"
 }

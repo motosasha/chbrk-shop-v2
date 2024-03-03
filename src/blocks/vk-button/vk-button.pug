@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (vk-button)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin vk-button(href, mods)
+
+  //- Принимает:
+  //-   href    {string} - адрес ссылки
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +vk-button("Текст", "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " vk-button--" + modsList[i].trim();
+      }
+    }
+
+  a.vk-button(class=allMods, href= href, target="_blank")&attributes(attributes)
+    svg.vk-button__icon
+      use(href= path.icon + "icon__socials--vk")
+    | Группа в ВК

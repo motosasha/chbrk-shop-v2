@@ -7,7 +7,7 @@ mixin header(mods)
   //- Принимает:
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +header("Текст", "some-mod")
+        +header("some-mod")
 
   //- список модификаторов
   -
@@ -20,6 +20,34 @@ mixin header(mods)
     }
 
   .header(class=allMods)&attributes(attributes)
-    .container
-      .header__inner Page header
-        block
+    .header__inner
+      .container
+        .header__row
+          if isMainPage
+            .header__logo: +logo
+          else
+            a.header__logo(href="/"): +logo
+          .header__links
+            +nav(json.mainNav)(class="header__nav")
+            .header__separator
+            .header__user
+              if isAuthorisation
+                .user
+                  a.user__wallet(href="#")
+                    .user__wallet-sum #[span 0000000] ₽
+                    svg.user__wallet-icon
+                      use(href= path.icon + "icon__wallet")
+                  button.user__button
+                    svg.user__icon
+                      use(href= path.icon + "icon__user")
+                  .user__drop
+                    a.user__profile(href="#")
+                      .user__name SegaMegaDrive
+                      .user__email mail@mail.ru
+                    .user__separator
+                    button.user__logout
+                      svg.user__drop-icon
+                        use(href= path.icon + "icon__logout")
+                      | Выход
+              else
+                a.header__login(href="login.html") Вход
