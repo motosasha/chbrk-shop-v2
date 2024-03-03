@@ -23,7 +23,10 @@
   --header-height-t: 105px;
   --back-blur-header: 12px;
   --box-shadow-default: 0 4px 6px -2px rgba(0 0 0 / 5%), 0 10px 15px -3px rgba(0 0 0 / 10%);
+  --white-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, var(--white) 100%);
   --transition-default: 0.25s ease;
+
+  --z-index-header: 2;
 
   --white: #ffffff;
   --white-transparent: rgba(255 255 255 / 95%);
