@@ -1,0 +1,71 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/link-reset";
+@import "../../scss/mixins/text-styles";
+
+.collections {
+  $block-name: &; // #{$block-name}__element
+
+  &__tiles {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: $screen-tl) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: $screen-m) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    @include collections-tile;
+    @include link-reset;
+
+    overflow: hidden;
+    color: var(--purple-700);
+    white-space: nowrap;
+    background: var(--zinc-100);
+    border-radius: 25px;
+    transition: all var(--transition-default);
+
+    @media screen and (max-width: $screen-tl) {
+    	width: calc(25% - 15px);
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      width: calc(33.3333% - 13.3333px);
+    }
+
+    @media screen and (max-width: $screen-m) {
+      width: auto;
+      border-radius: 15px;
+    }
+
+    @media (pointer: fine) {
+      &:hover {
+        background: var(--white);
+        box-shadow: 0 15px 20px 0 rgba(39 39 42 / 15%);
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__item-title {
+    padding: 25px 0 30px;
+
+    @media screen and (max-width: $screen-m) {
+      padding: 10px 0 15px;
+    }
+  }
+}

@@ -58,3 +58,30 @@
   letter-spacing: -0.028px;
   text-align: center;
 }
+
+@mixin section-title {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 1.2857;
+  letter-spacing: 0.044em;
+  text-transform: uppercase;
+
+  @media screen and (max-width: $screen-ti) {
+    font-size: fluid(20, 35, 360, 992);
+  }
+
+  @media screen and (max-width: $screen-t) {
+    font-size: 25px;
+  }
+}
+
+@mixin collections-tile {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1;
+  text-align: center;
+
+  @media screen and (max-width: $screen-m) {
+    font-size: 20px;
+  }
+}

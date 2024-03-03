@@ -1,0 +1,99 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/fluid";
+@import "../../scss/mixins/text-styles";
+
+.section {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 60px 0 90px;
+
+  @media screen and (max-width: $screen-tl) {
+    padding: 45px 0 75px;
+  }
+
+  @media screen and (max-width: $screen-m) {
+    padding: 30px 0 45px;
+  }
+
+  &__inner {
+    display: grid;
+    gap: 40px;
+
+    @media screen and (max-width: $screen-tl) {
+      gap: 30px;
+    }
+
+    @media screen and (max-width: $screen-m) {
+      gap: 20px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  &__header {
+    display: flex;
+    grid-column: 2/12;
+    gap: 25px;
+    align-items: center;
+    color: var(--purple-700);
+
+    @media screen and (max-width: $screen-tl) {
+      grid-column: 1/-1;
+    }
+
+    @media screen and (max-width: $screen-m) {
+      display: block;
+    }
+  }
+
+  &__title {
+    @include section-title;
+
+    margin: 0;
+
+    @media screen and (max-width: $screen-t) {
+      text-align: center;
+    }
+  }
+
+  &__arrow {
+    --stroke-width: 3px; // stylelint-disable-line
+
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+
+    @media screen and (max-width: $screen-m) {
+      display: none;
+    }
+
+    &::before {
+      --vertical-shift: calc(var(--stroke-width) / 2 * -1); // stylelint-disable-line
+
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: calc(100% - var(--stroke-width));
+      height: 1px;
+      margin-right: var(--stroke-width);
+      border-top: var(--stroke-width) solid currentColor;
+      transform: translateY(var(--vertical-shift));
+      content: "";
+    }
+  }
+
+  &__arrow-end {
+    width: 13px;
+    height: 22px;
+    stroke-width: var(--stroke-width);
+  }
+
+  &__body {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,33 @@
+//- Все примеси в этом файле должны начинаться c имени блока (section)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin section(data, mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +section("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " section--" + modsList[i].trim();
+      }
+    }
+
+  section.section(class=allMods)&attributes(attributes)
+    .container
+      .section__inner
+        .section__grid
+          .section__header
+            h2.section__title!= data.title
+            .section__arrow
+              svg.section__arrow-end
+                use(href= path.icon + "icon__arrow-end")
+        .section__grid
+          .section__body
+            block
