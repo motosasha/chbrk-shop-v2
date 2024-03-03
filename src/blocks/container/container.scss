@@ -1,8 +1,21 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/fluid";
 
 .container {
-  max-width: 832px;
+  width: calc(100vw - 200px);
+  max-width: 1720px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 16px;
+
+  @media screen and (max-width: $screen-tl) {
+    width: calc(100vw - #{fluid(120, 200, 992, 1280)});
+  }
+
+  @media screen and (max-width: $screen-ti) {
+    width: calc(100vw - 80px);
+  }
+
+  @media screen and (max-width: $screen-t) {
+    width: calc(100vw - 30px);
+  }
 }

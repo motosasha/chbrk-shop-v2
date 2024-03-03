@@ -164,7 +164,6 @@ export const config = {
   // style sheets
   styleSheets: [
     "src/scss/style.scss",
-    "src/scss/another.scss",
   ],
   // browserSync options
   serverOptions: {
@@ -188,7 +187,7 @@ export const config = {
   // px to rem properties
   pxToRem: ["font", "font-size", "line-height", "letter-spacing"],
   // svg attributes to be removed
-  removeSvgAttr: ["symbol:width", "symbol:height", "stroke-width"],
+  removeSvgAttr: ["symbol:width", "symbol:height"],
   // message
   doNotEditMsg:
     "\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n",
@@ -197,11 +196,11 @@ export const config = {
   blockRegexp: /[^\\/]+(?=\.[^.])/g,
   templateRegexp: /(?<=extends.*templates\/).*.pug/g,
   // strategy
-  strategy: "mobile-first", // ["mobile-first", "desktop-first"]
+  strategy: "desktop-first", // ["mobile-first", "desktop-first"]
   // env
   mode: process.env.MODE || "development",
   // img copy mode
-  isSeparatedBlockImg: "collected", // [false, true, "collected"]
+  isSeparatedBlockImg: false, // [false, true, "collected"]
   // library
   buildLibrary: process.env.BUILD_LIBRARY || false,
   // navigation

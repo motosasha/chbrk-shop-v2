@@ -1,8 +1,60 @@
-@import "fluid";
 @import "../breakpoints";
+@import "fluid";
 
 @mixin body {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1;
+}
+
+@mixin edging-link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.25;
+
+  @media screen and (max-width: $screen-ti) {
+    font-size: fluid(15, 20, 768, 992);
+  }
+
+  @media screen and (max-width: $screen-t) {
+    font-size: 15px;
+  }
+}
+
+@mixin wallet {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+
+  @media screen and (max-width: $screen-m) {
+    font-size: 15px;
+  }
+}
+
+@mixin user-drop {
+  font-size: 15px;
+  line-height: 1.3334;
+  text-align: center;
+}
+
+@mixin vk-button {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+}
+
+@mixin footer-info {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+}
+
+@mixin copy {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: -0.028px;
+  text-align: center;
 }

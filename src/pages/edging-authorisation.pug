@@ -1,11 +1,8 @@
 extends ../templates/template__default.pug
 
 block variables
-  - isMainPage = true
-  - pageTitle = "Cheburek shop"
+  - isMainPage = false
+  - isAuthorisation = true
+  - pageTitle = "Edging (authorisation)"
   - metaDescription = "description"
   - metaKeywords = "keywords"
-
-block content
-  .container
-    div!= json.info.data

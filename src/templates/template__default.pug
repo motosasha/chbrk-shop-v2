@@ -3,6 +3,7 @@
 include mixins.pug
 
 - var isMainPage = false
+- var isAuthorisation = false
 - var pageTitle = "title"
 - var metaDescription = "description"
 - var metaKeywords = "keywords"
@@ -31,7 +32,8 @@ html(class="no-js", lang="ru")
         +header
       .page__main
         block content
-          .content-filler content-filler
+          .container
+            .content-filler content-filler
       .page__footer
         +footer
 
