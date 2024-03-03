@@ -8,3 +8,10 @@ block variables
 
 block content
   section.hero
+
+  +section(json.sectionCollections)(class="collections")
+    .collections__tiles
+      each tile in json.sectionCollections.tiles
+        a.collections__item(href= tile.href)
+          img.collections__image(src=path.img + "collections__tile--" + json.sectionCollections.tiles.toLowerCase() + ".webp")
+          .collections__item-title!= tile.title

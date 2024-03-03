@@ -1,0 +1,29 @@
+{
+  "title": "Наши коллекции",
+  "tiles": [
+    {
+      "title": "Collections",
+      "href": "#"
+    },
+    {
+      "title": "Godly",
+      "href": "#"
+    },
+    {
+      "title": "Vintage",
+      "href": "#"
+    },
+    {
+      "title": "Pets",
+      "href": "#"
+    },
+    {
+      "title": "Ancient",
+      "href": "#"
+    },
+    {
+      "title": "Chroma",
+      "href": "#"
+    }
+  ]
+}
