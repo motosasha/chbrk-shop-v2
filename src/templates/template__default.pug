@@ -30,7 +30,7 @@ html(class="no-js", lang="ru")
     .page
       .page__header
         +header
-      .page__main
+      .page__main(class= isMainPage ? "": "page__main--pt")
         block content
           .container
             .content-filler content-filler
