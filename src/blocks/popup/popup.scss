@@ -1,0 +1,116 @@
+@import "../../scss/breakpoints";
+
+.popup {
+  $block-name: &; // #{$block-name}__element
+
+  max-width: 90%;
+  padding: 30px;
+  overflow: hidden;
+  background-color:var(--white);
+  border-radius: 25px;
+
+  &--mini {
+    width: 480px;
+    height: 240px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 10;
+    display: block;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    background-color: var(--zinc-200);
+    background-image: none;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.25s ease;
+
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+  }
+
+  &__inner {
+    height: 100%;
+
+    @media screen and (min-width: $screen-tl) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__scroll {
+    height: 100%;
+    padding: 40px 16px 32px;
+
+    @media screen and (min-width: $screen-t) {
+      padding: 48px;
+    }
+
+    @media screen and (min-width: $screen-tl) {
+      grid-column: 1/8;
+      height: auto;
+      overflow: hidden auto;
+    }
+  }
+
+  &__form {
+    height: 100%;
+
+    @media screen and (min-width: $screen-tl) {
+      height: auto;
+    }
+  }
+
+  &__aside {
+    display: none;
+
+    @media screen and (min-width: $screen-tl) {
+      display: block;
+      grid-column: 8/13;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--color-purple-600);
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+}

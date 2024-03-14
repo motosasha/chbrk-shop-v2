@@ -1,0 +1,29 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.faq-form {
+  $block-name: &; // #{$block-name}__element
+
+  position: sticky;
+  top: var(--header-height);
+  display: grid;
+  gap: 15px;
+  padding: 40px;
+  background: var(--zinc-100);
+  border-radius: 25px;
+
+  @media screen and (max-width: $screen-tl) {
+    padding: clamp(1.5625rem, 1.0734rem + 1.3587vw, 2.5rem);
+  }
+
+  &__title {
+    @include faq-form-title;
+
+    margin: 0 0 15px;
+    color: var(--purple-700);
+
+    @media screen and (max-width: $screen-tl) {
+      margin-bottom: clamp(0rem, -0.767rem + 2.1307vw, 0.9375rem);
+    }
+  }
+}

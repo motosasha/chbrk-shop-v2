@@ -1,0 +1,40 @@
+@import "../../scss/breakpoints";
+
+.faq {
+  $block-name: &; // #{$block-name}__element
+
+  &__cols {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+
+    @media screen and (max-width: $screen-ti) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__questions {
+    grid-column: 1/9;
+
+    @media screen and (max-width: $screen-d) {
+      grid-column: 1/8;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      grid-column: auto;
+    }
+  }
+
+  &__form {
+    grid-column: 9/13;
+    height: 100%;
+
+    @media screen and (max-width: $screen-d) {
+      grid-column: 8/13;
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      grid-column: auto;
+    }
+  }
+}

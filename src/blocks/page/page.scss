@@ -16,20 +16,13 @@
 
   &__main {
     flex: 1 0 auto;
+    padding-top: var(--header-height);
 
-    @media screen and (max-width: $screen-t) {
-      padding-top: var(--header-height-t);
-    }
+    &--is-main-page {
+      padding-top: 0;
 
-    &--pt {
-      padding-top: var(--header-height-d);
-
-      @media screen and (max-width: $screen-tl) {
-        padding-top: var(--header-height-tl);
-      }
-
-      @media screen and (max-width: $screen-ti) {
-        padding-top: var(--header-height-ti);
+      @media screen and (max-width: $screen-t) {
+        padding-top: var(--header-height);
       }
     }
   }

@@ -1,4 +1,5 @@
 @use "sass:color";
+@import "breakpoints";
 
 :root {
   --color-black: #000000;
@@ -17,10 +18,6 @@
   --font-weight-base: 400;
   --line-height-base: 1.25;
 
-  --header-height-d: 140px;
-  --header-height-tl: 160px;
-  --header-height-ti: 140px;
-  --header-height-t: 105px;
   --back-blur-header: 12px;
   --box-shadow-default: 0 4px 6px -2px rgba(0 0 0 / 5%), 0 10px 15px -3px rgba(0 0 0 / 10%);
   --white-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, var(--white) 100%);
@@ -36,6 +33,7 @@
   --zinc-400: #a1a1aa;
   --zinc-700: #3f3f46;
   --orange-500: #f97316;
+  --orange-600: #ea580c;
   --purple-300: #d8b4fe;
   --purple-700: #7e22ce;
   --vk-brand-color: #4680c2;
@@ -44,4 +42,15 @@
   --front-primary: var(--zinc-700);
   --front-invert: var(--white);
   --back-primary: var(--white);
+
+  --header-height: 140px;
+  @media screen and (max-width: $screen-tl) {
+    --header-height: 160px;
+  }
+  @media screen and (max-width: $screen-ti) {
+    --header-height: 140px;
+  }
+  @media screen and (max-width: $screen-t) {
+    --header-height: 105px;
+  }
 }

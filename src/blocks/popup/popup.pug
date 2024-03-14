@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (popup)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin popup
+  .hystmodal#thanks(aria-hidden="true")
+    .hystmodal__wrap
+      .popup.popup--mini.hystmodal__window(role="dialog", aria-modal="true")
+        button.popup__close.hystmodal__close(data-hystclose)
+          svg.svg.popup__icon
+            use(href=path.icon + "icon__close")
+        .popup__message
+          h2.popup__title Спасибо #[span за заявку!]
+          p.popup__p В ближайшее время мы свяжемся с Вами
+
+mixin popup-error
+  .hystmodal#error(aria-hidden="true")
+    .hystmodal__wrap
+      .popup.popup--mini.hystmodal__window(role="dialog", aria-modal="true")
+        button.popup__close.hystmodal__close(data-hystclose)
+          svg.svg.popup__icon
+            use(href=path.icon + "icon__close")
+        .popup__message
+          h2.popup__title Произошла #[span ошибка!]
+          p.popup__p Мы её уже устраняем, попробуйте задать вопрос позже.

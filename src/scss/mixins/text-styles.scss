@@ -85,3 +85,47 @@
     font-size: 20px;
   }
 }
+
+@mixin accordion-title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+
+  @media screen and (max-width: $screen-tl) {
+    font-size: clamp(1.25rem, 0.9943rem + 0.7102vw, 1.5625rem);
+  }
+}
+
+@mixin accordion-content {
+  font-size: 15px;
+  line-height: 1.3334;
+}
+
+@mixin faq-form-title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  @media screen and (max-width: $screen-tl) {
+    font-size: clamp(1.25rem, 0.9943rem + 0.7102vw, 1.5625rem);
+  }
+}
+
+@mixin input {
+  font-size: 20px;
+  line-height: 1;
+}
+
+@mixin textarea {
+  font-size: 20px;
+  line-height: 1;
+}
+
+@mixin button-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+}

@@ -1,0 +1,99 @@
+.hystmodal__shadow {
+	position: fixed;
+	inset: 0;
+	z-index: 98;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	background-color: black;
+	border: none;
+	opacity: 0;
+	transition: opacity 0.15s ease;
+	pointer-events: none;
+}
+
+.hystmodal__shadow--show {
+	opacity: 0.6;
+	pointer-events: auto;
+}
+
+.hystmodal {
+	position: fixed;
+	inset: 0;
+	z-index: 99;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	overflow: hidden;
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 1;
+	pointer-events: none;
+	-webkit-overflow-scrolling: touch;
+}
+
+.hystmodal--active {
+	opacity: 1;
+}
+
+.hystmodal--moved,
+.hystmodal--active {
+	visibility: visible;
+	pointer-events: auto;
+}
+
+.hystmodal__wrap {
+	display: flex;
+	flex-flow: column nowrap;
+	flex-grow: 0;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 100%;
+	margin: auto;
+  background-color: rgba(97 97 97 /30%);
+  backdrop-filter: blur(8px);
+}
+
+.hystmodal__window {
+	flex-grow: 0;
+	flex-shrink: 0;
+	box-sizing: border-box;
+	width: 600px;
+	max-width: 100%;
+	overflow: visible;
+	background: #fff;
+	transform: scale(0.9);
+	opacity: 0;
+	transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+}
+
+.hystmodal--active .hystmodal__window {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.hystmodal__close {
+	position: absolute;
+	top: 0;
+	right: -40px;
+	z-index: 10;
+	display: block;
+	width: 30px;
+	height: 30px;
+	font-size: 0;
+	background-color: transparent;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.hystmodal__close:focus {
+	outline: 2px dotted #afb3b9;
+	outline-offset: 2px;
+}

@@ -31,12 +31,15 @@ html(class="no-js", lang="ru")
       h1.page__title(hidden) Cheburek shop
       .page__header
         +header
-      .page__main(class= isMainPage ? "": "page__main--pt")
+      .page__main(class= isMainPage ? "page__main--is-main-page": "")
         block content
           .container
             .content-filler content-filler
       .page__footer
         +footer
+
+    +popup
+    +popup-error
 
     block templates
 

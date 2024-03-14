@@ -1,0 +1,42 @@
+@import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/text-styles";
+
+.button {
+  $block-name: &; // #{$block-name}__element
+
+  @include flex-center;
+  @include button-title;
+
+  padding: 20px;
+  color: var(--front-invert);
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+  appearance: none;
+
+  &--primary {
+    background: var(--orange-600);
+
+    &:focus-visible,
+    &:hover {
+      background: var(--orange-500);
+    }
+
+    &[disabled],
+    &#{$block-name}--disabled {
+      background: var(--zinc-300);
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+}

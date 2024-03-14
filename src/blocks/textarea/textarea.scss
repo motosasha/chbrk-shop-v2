@@ -1,0 +1,34 @@
+@import "../../scss/mixins/text-styles";
+
+.textarea {
+  $block-name: &; // #{$block-name}__element
+
+  @include textarea;
+
+  height: 200px;
+  padding: 19px 24px;
+  background: var(--white);
+  border: 1px solid var(--zinc-200);
+  border-radius: 15px;
+  outline: none;
+  transition: border 0.25s ease-out;
+  appearance: none;
+  resize: none;
+
+  &::placeholder {
+    color: var(--zinc-400);
+  }
+
+  &--has-value,
+  &:focus {
+    border: 1px solid var(--purple-700);
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border: 1px solid var(--zinc-200);
+    -webkit-text-fill-color: var(--white);
+    -webkit-box-shadow: none;
+  }
+}

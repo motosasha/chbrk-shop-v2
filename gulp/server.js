@@ -65,6 +65,8 @@ export function server() {
     if (rebuildPages.length) {
       calcGraph();
       compilePug(rebuildPages);
+      writeSassImportsFile();
+      compileSass();
       browserSync.reload();
     }
   });
@@ -109,7 +111,7 @@ export function server() {
   watch(
     [`${config.from.blocks}/**/*.scss`, `${config.from.library}/blocks/**/*.scss`],
     { events: ["change"], delay: 100 },
-    series(compileSass),
+    series(writeSassImportsFile, compileSass),
   );
 
   // Blocks style: add

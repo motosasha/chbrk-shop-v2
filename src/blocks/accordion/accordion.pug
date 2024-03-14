@@ -1,0 +1,32 @@
+//- Все примеси в этом файле должны начинаться c имени блока (accordion)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin accordion(data, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +accordion(json.object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " accordion--" + modsList[i].trim();
+      }
+    }
+
+  .accordion(class=allMods)&attributes(attributes)
+    each item, index in data
+      .accordion__item(class= index === 0 ? "accordion__item--active": "")
+        .accordion__head!= item.title
+        if item.answer
+          .accordion__body!= item.answer
+        else
+          .accordion__body
+            block
+

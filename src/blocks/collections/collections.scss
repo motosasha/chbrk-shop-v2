@@ -45,7 +45,7 @@
       border-radius: 15px;
     }
 
-    @media (pointer: fine) {
+    @media (hover: hover) {
       &:hover {
         background: var(--white);
         box-shadow: 0 15px 20px 0 rgba(39 39 42 / 15%);

@@ -12,7 +12,7 @@ const cssPathObj = {
   js: ``,
   css: ``,
   img: ``,
-  fonts: `../`,
+  fonts: ``,
 };
 
 // deploy/build template condition
@@ -104,19 +104,19 @@ export const config = {
   // paths for markup
   paths: {
     pug: {
-      js: `${htmlPathObj.js}js/`,
-      css: `${htmlPathObj.css}css/`,
-      img: `${htmlPathObj.img}img/`,
-      fonts: `${htmlPathObj.fonts}fonts/`,
+      js: `./${htmlPathObj.js}js/`,
+      css: `./${htmlPathObj.css}css/`,
+      img: `./${htmlPathObj.img}img/`,
+      fonts: `./${htmlPathObj.fonts}fonts/`,
       get icon() {
         return `${this.img}svgSprite.svg#`;
       },
     },
     style: {
-      js: `${cssPathObj.js}js/`,
-      css: `${cssPathObj.css}css/`,
-      img: `${cssPathObj.img}img/`,
-      fonts: `${cssPathObj.fonts}fonts/`,
+      js: `./${cssPathObj.js}js/`,
+      css: `./${cssPathObj.css}css/`,
+      img: `./${cssPathObj.img}img`,
+      fonts: `../${cssPathObj.fonts}fonts/`,
       get icon() {
         return `${this.img}svgSprite.svg#`;
       },
@@ -149,6 +149,7 @@ export const config = {
     // "src/scss/vendor.scss",
     "src/scss/fonts.scss",
     // "src/scss/animations.scss"
+    "src/scss/vendor/hystmodal.scss",
     // "somePackage/dist/somePackage.css", // for "node_modules/somePackage/dist/somePackage.css",
   ],
   // style imports at end
