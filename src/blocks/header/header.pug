@@ -26,7 +26,7 @@ mixin header(mods)
           if isMainPage
             .header__logo: +logo
           else
-            a.header__logo(href="/"): +logo
+            a.header__logo(href=path.ghRoot): +logo
           .header__links
             +nav(json.mainNav)(class="header__nav")
             .header__separator

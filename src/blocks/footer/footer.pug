@@ -25,7 +25,7 @@ mixin footer(mods)
         if isMainPage
           .footer__logo: +logo
         else
-          a.footer__logo(href="/"): +logo("footer")
+          a.footer__logo(href=path.ghRoot): +logo("footer")
         .footer__links
           +nav(json.mainNav)(class="footer__nav")
           +vk-button("https://vk.com/4ebyrekshop")

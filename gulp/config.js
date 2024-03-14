@@ -1,4 +1,5 @@
-let ghPagesUrl = ``; // ghPagesUrl: https://[userName].github.io/[projectName]/index.html
+let ghPagesUrl = `https://motosasha.github.io/chbrk-shop-v2/index.html`; // ghPagesUrl: https://[userName].github.io/[projectName]/index.html
+let ghRoot = process.env.MODE === "deploy" ? "/chbrk-shop-v2/": "/";
 let pathToPrefix = ``;
 
 const htmlPathObj = {
@@ -111,6 +112,7 @@ export const config = {
       get icon() {
         return `${this.img}svgSprite.svg#`;
       },
+      ghRoot: ghRoot,
     },
     style: {
       js: `./${cssPathObj.js}js/`,
