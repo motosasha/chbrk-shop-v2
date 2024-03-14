@@ -2,9 +2,11 @@
 //- Упоминание имени блока в классах обязательно, без этого он не попадёт
 //- в сборку
 
-mixin section(data, mods)
+mixin section(data, type, mods)
 
   //- Принимает:
+  //-   data    {object} - данные
+  //-   type    {boolean} - тип-условие
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +section("some-mod")
@@ -23,10 +25,15 @@ mixin section(data, mods)
     .container
       .section__inner
         .section__grid
-          .section__header
-            h2.section__title!= data.title
-            .section__arrow
-              svg.section__arrow-end
-                use(href= path.icon + "icon__arrow-end")
+          if (type)
+            .section__header
+              h2.section__title!= data.title
+              .section__arrow
+                svg.section__arrow-end
+                  use(href= path.icon + "icon__arrow-end")
+          else
+            .section__header.section__header--wide
+              h2.section__title!= data.title
+              .section__arrow
         .section__body
           block

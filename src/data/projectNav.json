@@ -7,6 +7,11 @@
           "title": "Main page",
           "description": "главная страница",
           "href": "index"
+        },
+        {
+          "title": "FAQ page",
+          "description": "вопрос-ответ",
+          "href": "faq"
         }
       ]
     },

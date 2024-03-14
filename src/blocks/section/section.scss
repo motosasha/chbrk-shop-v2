@@ -48,6 +48,10 @@
     @media screen and (max-width: $screen-m) {
       display: block;
     }
+
+    &--wide {
+      grid-column: 1/-1;
+    }
   }
 
   &__title {

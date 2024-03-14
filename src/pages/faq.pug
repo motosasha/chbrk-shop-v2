@@ -1,22 +1,13 @@
 extends ../templates/template__default.pug
 
 block variables
-  - isMainPage = true
-  - pageTitle = "Cheburek shop"
+  - isMainPage = false
+  - pageTitle = "Вопрос-ответ | Cheburek shop"
   - metaDescription = "description"
   - metaKeywords = "keywords"
 
 block content
-  section.hero
-
-  +section(json.sectionCollections)(class="collections")
-    .collections__tiles
-      each tile in json.sectionCollections.tiles
-        a.collections__item(href= tile.href)
-          img.collections__image(src=path.img + "collections__tile--" + tile.title.toLowerCase() + ".webp", alt="")
-          .collections__item-title!= tile.title
-
-  +section(json.sectionFaq, true)(class="faq")
+  +section(json.sectionFaq)(class="faq")
     .faq__cols
       .faq__questions
         +accordion(json.sectionFaq.questions)
