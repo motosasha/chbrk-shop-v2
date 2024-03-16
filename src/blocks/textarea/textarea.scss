@@ -5,6 +5,7 @@
 
   @include textarea;
 
+  width: 100%;
   height: 200px;
   padding: 19px 24px;
   background: var(--white);
@@ -17,6 +18,10 @@
 
   &::placeholder {
     color: var(--zinc-400);
+  }
+
+  &.invalid {
+    border: 1px solid var(--error);
   }
 
   &--has-value,

@@ -25,9 +25,12 @@ block content
               use(href= path.icon + "icon__play")
             img.accordion__video-bg(src=path.img + "accordion__video.webp", alt="")
       .faq__form
-        form.faq-form
+        form.form.faq-form
           h2.faq-form__title Задать вопрос
-          input.input.faq-form__input(type="text", id="faqName", placeholder="Имя", required)
-          input.input.faq-form__input(type="email", id="faqEmail", placeholder="Почта", required)
-          textarea.textarea.faq-form__textarea(placeholder="Сообщение", id="faqMessage", required)
-          button.button.button--primary.faq-form__button(type="submit", disabled) Отправить
+          .form__row
+            input.input.faq-form__input(type="text", id="faqName", placeholder="Имя", required)
+          .form__row
+            input.input.faq-form__input(type="email", id="faqEmail", placeholder="Почта", required)
+          .form__row
+            textarea.textarea.faq-form__textarea(placeholder="Сообщение", id="faqMessage", required)
+          button.button.button--primary.faq-form__button(type="submit") Отправить

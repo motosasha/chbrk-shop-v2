@@ -1,61 +1,91 @@
 import ready from "../../js/utils/documentReady.js";
+import JustValidate from "just-validate";
+import { dict } from "../../js/common/dict.js";
+import { faqFormUrl } from "../../js/common/urls.js";
 
 ready(function () {
   const faqForm = document.querySelector(".faq-form");
 
   if (faqForm) {
-    const faqFormInputs = faqForm.querySelectorAll("input");
-    const faqFormTextarea = faqForm.querySelector("textarea");
-    const faqFormButton = faqForm.querySelector("button");
-
-    const faqFormFields = Array.from(faqFormInputs);
-    faqFormFields.push(faqFormTextarea);
-
-    faqFormFields.forEach((input) => {
-      input.addEventListener("input", () => {
-        defaultFormCheck(faqForm, faqFormButton);
-      });
-    });
-
-    faqForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      let formData = new FormData(faqForm);
-      faqFormFields.forEach((item) => {
-        formData.append(item.id, item.value);
-      });
-      const plainFormData = Object.fromEntries(formData.entries());
-      // todo поменять адрес запроса на реальный
-      fetch("https://jsonplaceholder.typicode.com/posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
+    const faqFormValidate = new JustValidate(
+      ".faq-form",
+      {
+        tooltip: {
+          position: "bottom",
         },
-        body: JSON.stringify(plainFormData),
-      }).then((response) => {
-        if (response.ok) {
-          window.popupThanks();
-          faqForm.reset();
-          faqFormFields.forEach((item) => {
-            item.classList.remove("input--has-value");
-          });
-          faqFormTextarea.classList.remove("textarea--has-value");
-          faqFormButton.setAttribute("disabled", "true");
-        } else {
-          window.popupError();
-        }
+        errorFieldCssClass: ["invalid"],
+        errorLabelCssClass: "form__error",
+      },
+      dict,
+    );
+    faqFormValidate.setCurrentLocale("ru");
+    faqFormValidate
+      .addField("#faqName", [
+        {
+          rule: "required",
+          errorMessage: "Name is required",
+        },
+        {
+          rule: "minLength",
+          value: 2,
+          errorMessage: "Name is too short",
+        },
+        {
+          rule: "maxLength",
+          value: 50,
+          errorMessage: "Name is too long",
+        },
+      ])
+      .addField("#faqEmail", [
+        {
+          rule: "required",
+          errorMessage: "Email is required",
+        },
+        {
+          rule: "email",
+          errorMessage: "Email is invalid",
+        },
+      ])
+      .addField("#faqMessage", [
+        {
+          validator: (value) => {
+            return value !== undefined && value.length > 3;
+          },
+          errorMessage: "Message should be more than 3 letters",
+        },
+      ])
+      .onSuccess(() => {
+        const faqFormInputs = faqForm.querySelectorAll("input");
+        const faqFormTextarea = faqForm.querySelector("textarea");
+        const faqFormButton = faqForm.querySelector("button");
+        const faqFormFields = Array.from(faqFormInputs);
+        faqFormFields.push(faqFormTextarea);
+
+        faqFormButton.setAttribute("disabled", "true");
+        let formData = new FormData(faqForm);
+        faqFormFields.forEach((item) => {
+          formData.append(item.id, item.value);
+        });
+        const plainFormData = Object.fromEntries(formData.entries());
+        fetch(faqFormUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify(plainFormData),
+        }).then((response) => {
+          if (response.ok) {
+            window.popupThanks();
+            faqForm.reset();
+            faqFormFields.forEach((item) => {
+              item.classList.remove("input--has-value");
+            });
+            faqFormTextarea.classList.remove("textarea--has-value");
+            faqFormButton.setAttribute("disabled", "false");
+          } else {
+            window.popupError();
+          }
+        });
       });
-    });
   }
 });
-
-function defaultFormCheck(form, submit) {
-  const formNameValue = form.querySelector("input[type='text']").value;
-  const formEmailValue = form.querySelector("input[type='email']").value;
-  const formTextareaValue = form.querySelector("textarea").value;
-  const noEmptyValues = !!formNameValue && !!formEmailValue && !!formTextareaValue;
-  const eMailFormat = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formEmailValue);
-
-  noEmptyValues && eMailFormat
-    ? submit.removeAttribute("disabled")
-    : submit.setAttribute("disabled", "true");
-}

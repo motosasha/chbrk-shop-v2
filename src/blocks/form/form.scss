@@ -1,0 +1,29 @@
+@import "../../scss/breakpoints";
+
+.form {
+  $block-name: &; // #{$block-name}__element
+
+  :is(&) &__error[data-tooltip="true"] {
+    padding: 4px 14px;
+    color: var(--front-primary);
+    background: var(--back-primary);
+    border: 1px solid var(--zinc-300);
+    border-radius: 15px;
+    transform: translateY(-5px);
+
+    &::before {
+      border-bottom: solid 5px var(--back-primary);
+    }
+
+    &::after {
+      position: absolute;
+      top: -6px;
+      left: calc(50% - 7px);
+      z-index: 2;
+      border-right: solid 7px transparent;
+      border-bottom: solid 6px var(--zinc-300);
+      border-left: solid 7px transparent;
+      content: "";
+    }
+  }
+}
