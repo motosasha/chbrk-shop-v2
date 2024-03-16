@@ -26,4 +26,8 @@
       margin-bottom: clamp(0rem, -0.767rem + 2.1307vw, 0.9375rem);
     }
   }
+
+  &__error {
+    color: var(--error);
+  }
 }

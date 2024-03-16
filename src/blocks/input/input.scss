@@ -20,6 +20,10 @@
     color: var(--zinc-400);
   }
 
+  &.invalid {
+    border: 1px solid var(--error);
+  }
+
   &--has-value,
   &:focus {
     border: 1px solid var(--purple-700);
