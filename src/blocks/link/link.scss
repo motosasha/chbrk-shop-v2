@@ -1,0 +1,22 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/link-reset";
+
+.link {
+  $block-name: &; // #{$block-name}__element
+
+  @include link-reset;
+
+  color: var(--purple-700);
+  font-weight: 500;
+  text-decoration-line: none;
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--alt {
+    color: var(--orange-600);
+  }
+}

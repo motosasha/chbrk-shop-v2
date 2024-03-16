@@ -4,7 +4,7 @@
 @mixin body {
   font-weight: 400;
   font-size: 15px;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 @mixin edging-link {
@@ -101,6 +101,17 @@
   line-height: 1.3334;
 }
 
+@mixin form-title {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+
+  @media screen and (max-width: $screen-tl) {
+    font-size: clamp(1.5625rem, 1.011rem + 1.4706vw, 2.1875rem);
+  }
+}
+
 @mixin faq-form-title {
   font-weight: 700;
   font-size: 25px;
@@ -128,4 +139,9 @@
   font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
+}
+
+@mixin checkbox-label {
+  font-size: 15px;
+  line-height: 1.3334;
 }

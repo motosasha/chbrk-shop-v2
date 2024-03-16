@@ -25,14 +25,20 @@
     &:hover {
       background: var(--orange-500);
     }
+  }
 
-    &[disabled],
-    &#{$block-name}--disabled {
-      background: var(--zinc-300);
+  &--secondary {
+    background: var(--purple-700);
+
+    &:focus-visible,
+    &:hover {
+      background: var(--purple-600);
     }
   }
 
+  &[disabled],
   &--disabled {
+    background: var(--zinc-300);
     pointer-events: none;
   }
 

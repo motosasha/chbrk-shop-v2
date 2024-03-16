@@ -16,15 +16,55 @@
       ]
     },
     {
+      "title": "Страницы форм",
+      "pages": [
+        {
+          "title": "Login page",
+          "description": "авторизация",
+          "href": "login"
+        },
+        {
+          "title": "Registration page",
+          "description": "регистрация",
+          "href": "registration"
+        },
+        {
+          "title": "Restore password page",
+          "description": "восстановление пароля",
+          "href": "restore"
+        },
+        {
+          "title": "Reset password page",
+          "description": "сброс пароля",
+          "href": "reset-pass"
+        }
+      ]
+    },
+    {
+      "title": "Документы",
+      "pages": [
+        {
+          "title": "Policy page",
+          "description": "политика конфиденциальности",
+          "href": "policy"
+        },
+        {
+          "title": "Agreement",
+          "description": "пользовательское соглашение",
+          "href": "agreement"
+        }
+      ]
+    },
+    {
       "title": "Служебные страницы",
       "pages": [
         {
-          "title": "edging",
+          "title": "Edging",
           "description": "окантовка страницы",
           "href": "edging"
         },
         {
-          "title": "edging (authorisation)",
+          "title": "Edging (authorisation)",
           "description": "окантовка страницы (вход выполнен)",
           "href": "edging-authorisation"
         }

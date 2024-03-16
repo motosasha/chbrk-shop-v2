@@ -24,16 +24,18 @@ mixin section(data, type, mods)
   section.section(class=allMods)&attributes(attributes)
     .container
       .section__inner
-        .section__grid
-          if (type)
-            .section__header
-              h2.section__title!= data.title
-              .section__arrow
-                svg.section__arrow-end
-                  use(href= path.icon + "icon__arrow-end")
-          else
-            .section__header.section__header--wide
-              h2.section__title!= data.title
-              .section__arrow
+        case type
+          when "default"
+            .section__grid
+              .section__header
+                h2.section__title!= data.title
+                .section__arrow
+                  svg.section__arrow-end
+                    use(href= path.icon + "icon__arrow-end")
+          when "wide"
+            .section__grid
+              .section__header.section__header--wide
+                h2.section__title!= data.title
+                .section__arrow
         .section__body
           block

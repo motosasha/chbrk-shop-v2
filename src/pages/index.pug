@@ -9,15 +9,15 @@ block variables
 block content
   section.hero
 
-  +section(json.sectionCollections)(class="collections")
+  +section(json.sectionCollections, "default")(class="collections")
     .collections__tiles
       each tile in json.sectionCollections.tiles
         a.collections__item(href= tile.href)
           img.collections__image(src=path.img + "collections__tile--" + tile.title.toLowerCase() + ".webp", alt="")
           .collections__item-title!= tile.title
 
-  +section(json.sectionFaq, true)(class="faq")
-    .faq__cols
+  +section(json.sectionFaq, "default")(class="faq")
+    .faq__grid
       .faq__questions
         +accordion(json.sectionFaq.questions)
           a.accordion__video(href="https://youtu.be/ooXgTHyUNJM")
@@ -25,12 +25,4 @@ block content
               use(href= path.icon + "icon__play")
             img.accordion__video-bg(src=path.img + "accordion__video.webp", alt="")
       .faq__form
-        form.form.faq-form
-          h2.faq-form__title Задать вопрос
-          .form__row
-            input.input.faq-form__input(type="text", id="faqName", placeholder="Имя", required)
-          .form__row
-            input.input.faq-form__input(type="email", id="faqEmail", placeholder="Почта", required)
-          .form__row
-            textarea.textarea.faq-form__textarea(placeholder="Сообщение", id="faqMessage", required)
-          button.button.button--primary.faq-form__button(type="submit") Отправить
+        +faq-form

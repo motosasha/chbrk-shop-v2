@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (faq-form)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin faq-form(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +faq-form("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " faq-form--" + modsList[i].trim();
+      }
+    }
+
+  form.form.faq-form(class=allMods)&attributes(attributes)
+    h2.faq-form__title Задать вопрос
+    .form__row
+      input.input(type="text", id="faqName", placeholder="Имя", required)
+    .form__row
+      input.input(type="email", id="faqEmail", placeholder="Почта", required)
+    .form__row
+      textarea.textarea(placeholder="Сообщение", id="faqMessage", required)
+    button.button.button--primary(type="submit") Отправить

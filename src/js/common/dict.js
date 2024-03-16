@@ -8,7 +8,7 @@ export const dict = [
   {
     key: "The field is required",
     dict: {
-      ru: "Поле не может быть пустым",
+      ru: "Поле обязательно",
     },
   },
   {
@@ -44,7 +44,25 @@ export const dict = [
   {
     key: "Message should be more than 3 letters",
     dict: {
-      ru: "Сообщение должно быть более 3 символов",
+      ru: "Сообщение должно быть больше 3 символов",
+    },
+  },
+  {
+    key: "Password is required",
+    dict: {
+      ru: "Пароль обязателен",
+    },
+  },
+  {
+    key: "Password is too short",
+    dict: {
+      ru: "Пароль должно быть больше 3 символов",
+    },
+  },
+  {
+    key: "Passwords must match",
+    dict: {
+      ru: "Пароли должны совпадать",
     },
   },
 ];

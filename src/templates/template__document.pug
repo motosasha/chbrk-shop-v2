@@ -1,0 +1,25 @@
+//- Basic page template
+
+include mixins.pug
+
+- var pageTitle = "title"
+- var metaDescription = "description"
+- var metaKeywords = "keywords"
+- var json = locals
+- var path = pugPaths
+
+block variables
+
+doctype html
+html(class="no-js", lang="ru")
+  include ./template__default-head.pug
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+
+    .page
+      h1.page__title(hidden) Cheburek shop
+      main.document
+        block content
+          .container
+            .content-filler content-filler

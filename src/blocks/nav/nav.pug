@@ -23,5 +23,6 @@ mixin nav(data, mods)
   nav.nav(class=allMods)&attributes(attributes)
     ul.nav__inner
       each item in data
-        li.nav__item
-          a.nav__link(href= item.href + ".html")!= item.title
+        if !item.isAuth || item.isAuth === isAuthorisation
+          li.nav__item
+            a.nav__link(href= item.href + ".html", target= item.window === "new"? "_black": false)!= item.title

@@ -1,11 +1,83 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
 
 .form {
   $block-name: &; // #{$block-name}__element
 
+  display: grid;
+  gap: 15px;
+  padding: 40px;
+  background: var(--zinc-100);
+  border-radius: 25px;
+
+  @media screen and (max-width: $screen-tl) {
+    padding: clamp(1.5625rem, 1.0734rem + 1.3587vw, 2.5rem);
+  }
+
+  &__title {
+    @include form-title;
+
+    margin: 0 0 15px;
+    color: var(--orange-600);
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    @media screen and (max-width: $screen-tl) {
+      margin-bottom: clamp(0rem, -0.767rem + 2.1307vw, 0.9375rem);
+    }
+  }
+
+  &__p {
+    @include body;
+
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+
+    &--alarm {
+      color: var(--error);
+    }
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__eye {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    cursor: pointer;
+    opacity: 0.25;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &--show-pass:hover {
+        opacity: 1;
+      }
+    }
+
+    &--show-pass {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+  }
+
   :is(&) &__error[data-tooltip="true"] {
     padding: 4px 14px;
-    color: var(--front-primary);
+    color: var(--error);
     background: var(--back-primary);
     border: 1px solid var(--zinc-300);
     border-radius: 15px;
@@ -24,6 +96,18 @@
       border-bottom: solid 6px var(--zinc-300);
       border-left: solid 7px transparent;
       content: "";
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+
+    @media screen and (max-width: $screen-m) {
+      flex-direction: column;
+      gap: 10px;
     }
   }
 }

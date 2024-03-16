@@ -7,12 +7,18 @@ ready(function () {
     catchFocus: true,
     closeOnEsc: true,
   });
-
-  window.popupThanks = function () {
-    modals.open("#thanks");
+  const popupIds = {
+    popupThanks: "#thanks",
+    popupError: "#error",
+    popupLoginError: "#login-error",
+    popupRegistrationSuccess: "#registration-success",
+    popupRestoreSuccess: "#restore-success",
+    popupRestoreError: "#restore-error",
+    popupResetSuccess: "#reset-success",
   };
-
-  window.popupError = function () {
-    modals.open("#error");
-  };
+  for (let popup in popupIds) {
+    window[popup] = function () {
+      modals.open(popupIds[popup]);
+    };
+  }
 });

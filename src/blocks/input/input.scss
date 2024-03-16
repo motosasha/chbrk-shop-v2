@@ -16,6 +16,10 @@
   transition: border 0.25s ease-out;
   appearance: none;
 
+  &[type="password"] {
+    padding-right: 60px;
+  }
+
   &::placeholder {
     color: var(--zinc-400);
   }

@@ -5,7 +5,8 @@
 	},
 	{
 		"title": "Инвентарь",
-		"href": "inventory"
+		"href": "inventory",
+    "isAuth": true
 	},
 	{
 		"title": "FAQ",
@@ -13,6 +14,7 @@
 	},
 	{
 		"title": "Инструкция",
-		"href": "instruction"
+		"href": "https://www.youtube.com/watch?v=VMsHB4MCV_w",
+    "window": "new"
 	}
 ]

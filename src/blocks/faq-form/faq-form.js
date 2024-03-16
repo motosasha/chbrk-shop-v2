@@ -81,7 +81,7 @@ ready(function () {
               item.classList.remove("input--has-value");
             });
             faqFormTextarea.classList.remove("textarea--has-value");
-            faqFormButton.setAttribute("disabled", "false");
+            faqFormButton.removeAttribute("disabled");
           } else {
             window.popupError();
           }

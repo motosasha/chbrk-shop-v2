@@ -10,7 +10,7 @@ mixin popup
           svg.svg.popup__icon
             use(href=path.icon + "icon__close")
         .popup__message
-          h2.popup__title Спасибо #[span за вопрос!]
+          h2.popup__title Спасибо за вопрос!
           p.popup__p В ближайшее время мы ответим Вам на указанную почту.
 
 mixin popup-error
@@ -21,5 +21,60 @@ mixin popup-error
           svg.svg.popup__icon
             use(href=path.icon + "icon__close")
         .popup__message
-          h2.popup__title Произошла #[span ошибка!]
-          p.popup__p Мы её уже устраняем, попробуйте задать вопрос позже.
+          h2.popup__title Произошла ошибка!
+          p.popup__p Мы её уже устраняем, попробуйте повторить позже.
+
+mixin popup-login-error
+  .hystmodal#login-error(aria-hidden="true")
+    .hystmodal__wrap
+      .popup.popup--mini.hystmodal__window(role="dialog", aria-modal="true")
+        button.popup__close.hystmodal__close(data-hystclose)
+          svg.svg.popup__icon
+            use(href=path.icon + "icon__close")
+        .popup__message
+          h2.popup__title Произошла ошибка!
+          p.popup__p Неверный логин или пароль!
+
+mixin popup-registration-success
+  .hystmodal#registration-success(aria-hidden="true")
+    .hystmodal__wrap
+      .popup.popup--mini.hystmodal__window(role="dialog", aria-modal="true")
+        button.popup__close.hystmodal__close(data-hystclose)
+          svg.svg.popup__icon
+            use(href=path.icon + "icon__close")
+        .popup__message
+          h2.popup__title Вы зарегистрированы!
+          p.popup__p Регистрация прошла успешно
+
+mixin popup-restore-success
+  .hystmodal#restore-success(aria-hidden="true")
+    .hystmodal__wrap
+      .popup.popup--mini.hystmodal__window(role="dialog", aria-modal="true")
+        button.popup__close.hystmodal__close(data-hystclose)
+          svg.svg.popup__icon
+            use(href=path.icon + "icon__close")
+        .popup__message
+          h2.popup__title Проверьте почту!
+          p.popup__p Ссылка для смены пароля отправлена на почту
+
+mixin popup-restore-error
+  .hystmodal#restore-error(aria-hidden="true")
+    .hystmodal__wrap
+      .popup.popup--mini.hystmodal__window(role="dialog", aria-modal="true")
+        button.popup__close.hystmodal__close(data-hystclose)
+          svg.svg.popup__icon
+            use(href=path.icon + "icon__close")
+        .popup__message
+          h2.popup__title Произошла ошибка!
+          p.popup__p Пользователь не найден
+
+mixin popup-reset-success
+  .hystmodal#reset-success(aria-hidden="true")
+    .hystmodal__wrap
+      .popup.popup--mini.hystmodal__window(role="dialog", aria-modal="true")
+        button.popup__close.hystmodal__close(data-hystclose)
+          svg.svg.popup__icon
+            use(href=path.icon + "icon__close")
+        .popup__message
+          h2.popup__title Пароль был изменён!
+          p.popup__p Войдите используя новый пароль

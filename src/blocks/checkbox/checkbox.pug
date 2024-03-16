@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (checkbox)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin checkbox(id, name, mods)
+
+  //- Принимает:
+  //-   id         {string} - атрибут id
+  //-   name       {string} - атрибут name
+  //-   mods       {string} - список модификаторов
+  //- Вызов:
+        +checkbox("some-id", "some-name" "some-mod")
+
+  -
+    // список модификаторов
+    var allMods = "";
+    if(typeof(mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " checkbox--" + modsList[i].trim();
+      }
+    }
+
+  label.checkbox(class= allMods)
+    input.checkbox__input(type= "checkbox", id= id, name= name)&attributes(attributes)
+    span.checkbox__fake-input
+    block

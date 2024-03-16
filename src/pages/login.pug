@@ -1,0 +1,30 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Вход | Cheburek shop"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  +section()(class="form-block")
+    .form-block__grid
+      form.form.form-block__form#login-form
+        h2.form__title Вход
+        .form__row
+          input.input(type="email", id="loginEmail", placeholder="Почта", required)
+        .form__row
+          input.input(type="password", id="loginPass", placeholder="Пароль", required)
+          .form__eye
+            svg.form__icon
+              use(href= path.icon + "icon__eye")
+        .form__row
+          +checkbox("loginCheck", "loginCheck")(required)
+            span.checkbox__label Запомнить меня
+        button.button.button--secondary(type="submit") Войти
+        .form__footer
+          a.link.link--alt(href="restore.html") Восстановить пароль
+          a.link(href="registration.html") Регистрация
+
+block templates
+  +popup-login-error

@@ -1,0 +1,77 @@
+@import "../../scss/mixins/text-styles";
+
+.checkbox {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-self: start;
+
+  &__input {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+  }
+
+  &__fake-input {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    border: 1px solid var(--zinc-200);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--transition-default);
+
+    &::after {
+      display: block;
+      width: 10px;
+      height: 6px;
+      border: 2px solid transparent;
+      border-top: none;
+      border-right: none;
+      transform: translate(4px, 5px) rotate(-45deg);
+      transition: border-color var(--transition-default);
+      content: "";
+    }
+  }
+
+  &__input:checked + &__fake-input {
+    background: var(--brand-primary);
+  }
+
+  &__input[disabled] + &__fake-input {
+    border: 1px solid var(--border-button-disabled);
+    cursor: not-allowed;
+  }
+
+  &__input[disabled]:checked + &__fake-input {
+    background: var(--brand-primary-light);
+    border: 1px solid var(--brand-primary-light);
+    cursor: not-allowed;
+  }
+
+  &__input:checked + &__fake-input::after {
+    border-color: var(--front-invert);
+  }
+
+  &__input[disabled]:checked + &__fake-input::after {
+    border-color: var(--front-invert);
+    opacity: 0.5;
+  }
+
+  &__label {
+    @include checkbox-label;
+
+    color: var(--zinc-700);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__input[disabled] ~ &__label {
+    color: var(--front-tertiary);
+    cursor: not-allowed;
+  }
+}

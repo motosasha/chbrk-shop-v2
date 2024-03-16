@@ -7,8 +7,8 @@ block variables
   - metaKeywords = "keywords"
 
 block content
-  +section(json.sectionFaq)(class="faq")
-    .faq__cols
+  +section(json.sectionFaq, "wide")(class="faq")
+    .faq__grid
       .faq__questions
         +accordion(json.sectionFaq.questions)
           a.accordion__video(href="https://youtu.be/ooXgTHyUNJM")
@@ -16,12 +16,4 @@ block content
               use(href= path.icon + "icon__play")
             img.accordion__video-bg(src=path.img + "accordion__video.webp", alt="")
       .faq__form
-        form.form.faq-form
-          h2.faq-form__title Задать вопрос
-          .form__row
-            input.input.faq-form__input(type="text", id="faqName", placeholder="Имя", required)
-          .form__row
-            input.input.faq-form__input(type="email", id="faqEmail", placeholder="Почта", required)
-          .form__row
-            textarea.textarea.faq-form__textarea(placeholder="Сообщение", id="faqMessage", required)
-          button.button.button--primary.faq-form__button(type="submit") Отправить
+        +faq-form

@@ -116,13 +116,16 @@
   }
 
   &__user {
+    display: flex;
+    align-items: center;
+    height: 40px;
+
     @media screen and (max-width: $screen-tl) {
       grid-row: 1;
       padding: 0 15px;
     }
 
     @media screen and (max-width: $screen-t) {
-      display: flex;
       align-items: center;
       justify-content: end;
       width: 100%;

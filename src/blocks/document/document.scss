@@ -1,0 +1,44 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.document {
+  $block-name: &; // #{$block-name}__element
+
+  padding: 50px;
+
+  &__inner {
+    width: 640px;
+    max-width: calc(100% - 30px);
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  h2 {
+    margin: 40px 0 0;
+  }
+
+  h3 {
+    margin: 30px 0 0;
+  }
+
+  h4 {
+    margin: 20px 0 0;
+  }
+
+  p {
+    @include body;
+
+    margin: 15px 0 0;
+  }
+
+  ul,
+  ol {
+    display: grid;
+    gap: 10px;
+    margin: 15px 0 0;
+    padding: 0 0 0 20px;
+  }
+}
