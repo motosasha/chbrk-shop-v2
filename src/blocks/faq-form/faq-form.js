@@ -48,10 +48,8 @@ ready(function () {
       ])
       .addField("#faqMessage", [
         {
-          validator: (value) => {
-            return value !== undefined && value.length > 3;
-          },
-          errorMessage: "Message should be more than 3 letters",
+          rule: "required",
+          errorMessage: "Message is required",
         },
       ])
       .onSuccess(() => {

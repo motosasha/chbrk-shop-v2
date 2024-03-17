@@ -1,0 +1,112 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.inventory-tile {
+  $block-name: &; // #{$block-name}__element
+
+  &__input {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__inner {
+    display: grid;
+    overflow: hidden;
+    background: var(--zinc-100);
+    border-radius: clamp(0.9375rem, 0.3971rem + 1.8797vw, 1.5625rem);
+    cursor: pointer;
+    transition: all var(--transition-default);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 40px auto;
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 30px auto;
+    }
+  }
+
+  &__col {
+    padding: 15px 0 0 15px;
+
+    @media screen and (max-width: $screen-t) {
+      padding: 10px 0 0 10px;
+    }
+  }
+
+  &__fake-input {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: var(--white);
+    border: 1px solid var(--zinc-300);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--transition-default);
+
+    @media screen and (max-width: $screen-t) {
+      width: 20px;
+      height: 20px;
+    }
+
+    &::after {
+      display: block;
+      width: 10px;
+      height: 6px;
+      border: 2px solid transparent;
+      border-top: none;
+      border-right: none;
+      transform: translate(6px, 7px) rotate(-45deg);
+      transition: border-color var(--transition-default);
+      content: "";
+
+      @media screen and (max-width: $screen-t) {
+        transform: translate(4px, 5px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__input:checked + &__inner {
+    background: var(--white);
+    box-shadow: 0 15px 20px 0 rgba(39 39 42 / 15%);
+  }
+
+  &__input:checked + &__inner &__fake-input {
+    background: var(--brand-primary);
+  }
+
+  &__input:checked + &__inner &__fake-input::after {
+    border-color: var(--front-invert);
+  }
+
+  &__info {
+    display: grid;
+    padding: 15px 15px 15px 10px;
+
+    @media screen and (max-width: $screen-t) {
+      padding: 10px 10px 10px 5px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    @include shop-tile-title;
+
+    width: 100%;
+    overflow: hidden;
+    color: var(--orange-600);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__price {
+    @include body;
+
+    font-weight: 700;
+  }
+}

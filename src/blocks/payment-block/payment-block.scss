@@ -1,0 +1,59 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.payment-block {
+  $block-name: &; // #{$block-name}__element
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__descr {
+    @include body;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: $screen-t) {
+    	grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: grid;
+    gap: 5px;
+  }
+
+  &__label {
+    @include vk-button;
+  }
+
+  &__block {
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    @include vk-button;
+
+    margin-bottom: 10px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  &__button {
+    padding: 10px;
+  }
+
+  &__submit {
+    width: 100%;
+  }
+}

@@ -1,0 +1,57 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - isAuthorisation = true
+  - pageTitle = "Пополнение | Cheburek shop"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  +section({ title: "Пополнение" }, "wide")(class="payment-block")
+    .tabs
+      .tabs__labels
+        .tabs__label.tabs__label--active(data-href="#tink")
+          svg.tabs__icon
+            use(href= path.icon + "logo__tinkoff")
+          .tabs__label-inner
+            .tabs__label-title Тинькофф #[span 2,69 %]
+        .tabs__label(data-href="#code")
+          svg.tabs__icon
+            use(href= path.icon + "logo__cheburek--mini")
+          .tabs__label-inner
+            .tabs__label-title Код#[br]пополнения
+      .tabs__panes
+        .tabs__pane.tabs__pane--active#tink
+          form.form.payment-block__form#pay-form
+            .payment-block__title Сумма пополнения
+            .payment-block__descr Выберите желаемое количество средств для пополнения.#[br]Минимальная сумма — #[strong 50 ₽].
+            .payment-block__row
+              label.payment-block__field
+                span.payment-block__label Сумма, ₽ (без НДС)
+                input.input#paySum(type="text", name="sum", value="50", required)
+              label.payment-block__field
+                span.payment-block__label Итого с комиссией, ₽ (без НДС)
+                input.input#payTotal(type="text", name="total", readonly)
+            .payment-block__block
+              .payment-block__subtitle Популярные суммы платежей:
+              .payment-block__grid
+                button.button.button--secondary.payment-block__button(type="button", data-amount="100,00") 100
+                button.button.button--secondary.payment-block__button(type="button", data-amount="250,00") 250
+                button.button.button--secondary.payment-block__button(type="button", data-amount="500,00") 500
+                button.button.button--secondary.payment-block__button(type="button", data-amount="1000,00") 1000
+                button.button.button--secondary.payment-block__button(type="button", data-amount="2500,00") 2500
+                button.button.button--secondary.payment-block__button(type="button", data-amount="5000,00") 5000
+            .payment-block__block
+              +checkbox("payCheck", "payCheck")(required)
+                span.checkbox__label.
+                  Я согласен с #[a.link(href="/policy.html", target="_blank") политикой конфиденциальности]
+                  и #[a.link(href="/agreement.html", target="_blank") пользовательским соглашением]
+            button.button.button--primary.payment-block__submit(type="submit") Пополнить
+        .tabs__pane#code
+          form.form.payment-block__form#code-form
+            .payment-block__title Пополнение баланса кодом
+            label.payment-block__field
+              span.payment-block__label Код пополнения
+              input.input#codeField(type="text", name="code", placeholder="Введите код пополнения", required)
+            button.button.button--primary.payment-block__submit(type="submit") Пополнить

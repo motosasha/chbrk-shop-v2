@@ -1,0 +1,115 @@
+[
+  {
+    "title": "Flames",
+    "price": "29",
+    "isInCart": true
+  },
+  {
+    "title": "Fang",
+    "price": "32"
+  },
+  {
+    "title": "Battleaxe",
+    "price": "15"
+  },
+  {
+    "title": "Peppermint",
+    "price": "18"
+  },
+  {
+    "title": "Boneblade",
+    "price": "16"
+  },
+  {
+    "title": "Bioblade",
+    "price": "20"
+  },
+  {
+    "title": "Clockwork",
+    "price": "9"
+  },
+  {
+    "title": "Cookieblade",
+    "price": "17"
+  },
+  {
+    "title": "Prismatic",
+    "price": "32"
+  },
+  {
+    "title": "Heartblade",
+    "price": "29"
+  },
+  {
+    "title": "Deathshard",
+    "price": "40"
+  },
+  {
+    "title": "Vampire's edge",
+    "price": "33"
+  },
+  {
+    "title": "Orange seer",
+    "price": "26"
+  },
+  {
+    "title": "Seer",
+    "price": "14"
+  },
+  {
+    "title": "Yellow seer",
+    "price": "83"
+  },
+  {
+    "title": "Red seer",
+    "price": "120"
+  },
+  {
+    "title": "Spider",
+    "price": "167"
+  },
+  {
+    "title": "Blue seer",
+    "price": "1000"
+  },
+  {
+    "title": "Purple seer",
+    "price": "8"
+  },
+  {
+    "title": "Ice shard",
+    "price": "15"
+  },
+  {
+    "title": "Frostsaber",
+    "price": "25"
+  },
+  {
+    "title": "Winter's edge",
+    "price": "78"
+  },
+  {
+    "title": "Gingerblade",
+    "price": "90"
+  },
+  {
+    "title": "Ice dragon",
+    "price": "5"
+  },
+  {
+    "title": "Frostbite",
+    "price": "12"
+  },
+  {
+    "title": "Hallow's blade",
+    "price": "67"
+  },
+  {
+    "title": "Heat",
+    "price": "43"
+  },
+  {
+    "title": "Xmas",
+    "price": "27"
+  }
+]

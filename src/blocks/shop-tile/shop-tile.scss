@@ -1,0 +1,88 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.shop-tile {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  overflow: hidden;
+  background: var(--zinc-100);
+  border-radius: clamp(0.9375rem, 0.3971rem + 1.8797vw, 1.5625rem);
+  transition: all var(--transition-default);
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--white);
+      box-shadow: 0 15px 20px 0 rgba(39 39 42 / 15%);
+    }
+  }
+
+  &__miniature {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      background: url("{{icon}}icon__zoom-view") center no-repeat, var(--zinc-700-25p);
+      background-size: 50px 50px;
+      opacity: 0;
+      transition: opacity var(--transition-default);
+      content: "";
+      pointer-events: none;
+    }
+
+    @media (hover: hover) {
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__inner {
+    display: grid;
+    padding: 15px;
+
+    @media screen and (max-width: $screen-t) {
+      padding: 10px;
+    }
+  }
+
+  &__title {
+    @include shop-tile-title;
+
+    width: 100%;
+    overflow: hidden;
+    color: var(--orange-600);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__price {
+    @include body;
+
+    font-weight: 700;
+  }
+
+  &__button {
+    flex-grow: 1;
+    margin-top: 5px;
+    padding: 10px;
+  }
+
+  &__remove {
+    min-width: 40px;
+    padding: 10px;
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    color: var(--front-invert);
+    stroke-width: 2px;
+  }
+}

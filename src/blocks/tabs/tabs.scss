@@ -1,0 +1,86 @@
+@import "../../scss/mixins/text-styles";
+
+.tabs {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: 200px auto;
+  gap: 20px;
+  align-items: start;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media screen and (max-width: $screen-t) {
+    grid-template-columns: auto;
+  }
+
+  &__labels {
+    position: relative;
+    display: grid;
+    gap: 5px;
+
+    @media screen and (max-width: $screen-t) {
+      display: flex;
+    }
+  }
+
+  &__label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 14px;
+    border: 1px solid var(--purple-600);
+    border-radius: 15px;
+    cursor: pointer;
+
+    &--active {
+      background-color: var(--purple-300);
+      border: 1px solid var(--purple-300);
+      cursor: default;
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+
+    @media screen and (max-width: $screen-t) {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &__label-title {
+    @include vk-button;
+
+    span {
+      display: block;
+      color: var(--zinc-400);
+
+      .tabs__label--active & { // stylelint-disable-line
+        color: var(--front-invert);
+      }
+    }
+  }
+
+  &__panes {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 0;
+  }
+
+  &__pane {
+    grid-area: tab;
+    grid-column: 1/2;
+    width: 100%;
+    opacity: 0;
+    transition: opacity var(--transition-default), transform var(--transition-default);
+    pointer-events: none;
+
+    &--active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

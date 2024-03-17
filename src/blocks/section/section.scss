@@ -65,7 +65,7 @@
   }
 
   &__arrow {
-    --stroke-width: 3px; // stylelint-disable-line
+    --section-stroke-width: 3px;
 
     position: relative;
     display: flex;
@@ -77,16 +77,16 @@
     }
 
     &::before {
-      --vertical-shift: calc(var(--stroke-width) / 2 * -1); // stylelint-disable-line
+      --section-vertical-shift: calc(var(--section-stroke-width) / 2 * -1);
 
       position: absolute;
       top: 50%;
       display: block;
-      width: calc(100% - var(--stroke-width));
+      width: calc(100% - var(--section-stroke-width));
       height: 1px;
-      margin-right: var(--stroke-width);
-      border-top: var(--stroke-width) solid currentColor;
-      transform: translateY(var(--vertical-shift));
+      margin-right: var(--section-stroke-width);
+      border-top: var(--section-stroke-width) solid currentColor;
+      transform: translateY(var(--section-vertical-shift));
       content: "";
     }
   }
@@ -94,6 +94,65 @@
   &__arrow-end {
     width: 13px;
     height: 22px;
-    stroke-width: var(--stroke-width);
+    stroke-width: var(--section-stroke-width);
+  }
+
+  &__cols {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__aside {
+    grid-column: 1/4;
+    height: 100%;
+
+    @media screen and (max-width: $screen-d) {
+      grid-column: 1/5;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-column: auto;
+    }
+  }
+
+  &__content {
+    grid-column: 4/13;
+
+    @media screen and (max-width: $screen-d) {
+      grid-column: 5/13;
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-column: auto;
+    }
+  }
+
+  &__filler {
+    @include edging-link;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 30px 15px;
+    color: var(--orange-600);
+    text-align: center;
+    border: 1px solid var(--zinc-200);
+    border-radius: 25px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 0;
+
+    @media screen and (max-width: $screen-m) {
+      margin-top: 20px;
+    }
   }
 }

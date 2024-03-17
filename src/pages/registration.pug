@@ -8,32 +8,31 @@ block variables
 
 block content
   +section()(class="form-block")
-    .form-block__grid
-      form.form.form-block__form#registration-form
-        h2.form__title Регистрация
-        .form__row
-          input.input(type="text", id="registrationName", placeholder="Никнейм", required)
-        .form__row
-          input.input(type="email", id="registrationEmail", placeholder="Почта", required)
-        .form__row
-          input.input(type="password", id="registrationPass", placeholder="Пароль", required)
-          .form__eye
-            svg.form__icon
-              use(href= path.icon + "icon__eye")
-        .form__row
-          input.input(type="password", id="registrationPassRepeat", placeholder="Повтор пароля", required)
-          .form__eye
-            svg.form__icon
-              use(href= path.icon + "icon__eye")
-        .form__row
-          +checkbox("registrationCheck", "registrationCheck", "Запомнить меня")(required)
-            span.checkbox__label.
-              Я согласен с #[a.link(href="/policy.html", target="_blank") политикой конфиденциальности]
-              и #[a.link(href="/agreement.html", target="_blank") пользовательским соглашением]
-        button.button.button--secondary(type="submit") Зарегистрироваться
-        .form__footer
-          a.link.link--alt(href="restore.html") Восстановить пароль
-          a.link(href="login.html") Авторизация
+    form.form.form-block__form#registration-form
+      h2.form__title Регистрация
+      .form__row
+        input.input(type="text", id="registrationName", placeholder="Никнейм", required)
+      .form__row
+        input.input(type="email", id="registrationEmail", placeholder="Почта", required)
+      .form__row
+        input.input(type="password", id="registrationPass", placeholder="Пароль", required)
+        .form__eye
+          svg.form__icon
+            use(href= path.icon + "icon__eye")
+      .form__row
+        input.input(type="password", id="registrationPassRepeat", placeholder="Повтор пароля", required)
+        .form__eye
+          svg.form__icon
+            use(href= path.icon + "icon__eye")
+      .form__row
+        +checkbox("registrationCheck", "registrationCheck")(required)
+          span.checkbox__label.
+            Я согласен с #[a.link(href="/policy.html", target="_blank") политикой конфиденциальности]
+            и #[a.link(href="/agreement.html", target="_blank") пользовательским соглашением]
+      button.button.button--secondary(type="submit") Зарегистрироваться
+      .form__footer
+        a.link.link--alt(href="restore.html") Восстановить пароль
+        a.link(href="login.html") Авторизация
 
 block templates
   +popup-registration-success

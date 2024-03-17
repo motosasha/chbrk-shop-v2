@@ -1,0 +1,16 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Состояния пагинации | Cheburek shop"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  +section({title: "Состояния пагинации"}, "wide")
+    .section__pagination
+      +pagination
+    .section__pagination
+      +pagination-end
+    .section__pagination
+      +pagination-middle

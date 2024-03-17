@@ -1,0 +1,22 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - isAuthorisation = true
+  - pageTitle = "Инвентарь | Cheburek shop"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  +section(json.inventory, "wide")(class="inventory-block")
+    .section__cols
+      .section__aside
+        .inventory-block__filter
+          button.button.button--secondary.inventory-block__button#inventoryAll Выбрать все
+          button.button.button--secondary.inventory-block__button#inventoryNone Снять выделение
+          button.button.button--primary.inventory-block__submit Вывести предметы
+      .section__content
+        .inventory-block__grid
+          each tile, index in json.goods
+            if index < 5
+              +inventory-tile(tile, index)

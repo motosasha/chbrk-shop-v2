@@ -3,7 +3,7 @@
 .faq {
   $block-name: &; // #{$block-name}__element
 
-  &__grid {
+  &__cols {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;

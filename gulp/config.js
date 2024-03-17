@@ -115,12 +115,11 @@ export const config = {
       ghRoot: ghRoot,
     },
     style: {
-      js: `./${cssPathObj.js}js/`,
       css: `./${cssPathObj.css}css/`,
       img: `./${cssPathObj.img}img`,
       fonts: `../${cssPathObj.fonts}fonts/`,
       get icon() {
-        return `${this.img}svgSprite.svg#`;
+        return `.${this.img}/svgSprite.svg#`;
       },
     },
     pages: `/`,
@@ -190,7 +189,7 @@ export const config = {
   // px to rem properties
   pxToRem: ["font", "font-size", "line-height", "letter-spacing"],
   // svg attributes to be removed
-  removeSvgAttr: ["symbol:width", "symbol:height"],
+  removeSvgAttr: ["symbol:width", "symbol:height", "stroke-width"],
   // message
   doNotEditMsg:
     "\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции.\n Любое изменение проекта без возможности компиляции ДОЛЬШЕ И ДОРОЖЕ в 2-5 раз.\n\n",

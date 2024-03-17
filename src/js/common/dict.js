@@ -42,9 +42,9 @@ export const dict = [
     },
   },
   {
-    key: "Message should be more than 3 letters",
+    key: "Message is required",
     dict: {
-      ru: "Сообщение должно быть больше 3 символов",
+      ru: "Сообщение обязательно",
     },
   },
   {

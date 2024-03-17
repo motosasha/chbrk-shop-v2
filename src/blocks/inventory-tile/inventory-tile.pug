@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (inventory-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin inventory-tile(data, index, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   index   {number} - индекс
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +inventory-tile(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " inventory-tile--" + modsList[i].trim();
+      }
+    }
+
+  label.inventory-tile(title!= data.title)&attributes(attributes)
+    input.inventory-tile__input(type="checkbox", name="inventory")&attributes(attributes)
+    -
+      var number = (index + 1).toString().padStart(2, "0")
+
+    .inventory-tile__inner
+      img.inventory-tile__image(src= path.img + "shop__good--" + number + "-mini.webp", loading="lazy", alt= data.title)
+      .inventory-tile__row
+        .inventory-tile__col
+          span.inventory-tile__fake-input
+        .inventory-tile__info
+          .inventory-tile__title!= data.title
+          .inventory-tile__price #[span #{data.price}] ₽

@@ -6,6 +6,7 @@ import {
   registrationFormUrl,
   restoreFormUrl,
   resetFormUrl,
+  validationConfig,
 } from "../../js/common/urls.js";
 
 ready(function () {
@@ -13,13 +14,6 @@ ready(function () {
   const registrationForm = document.querySelector("#registration-form");
   const restoreForm = document.querySelector("#restore-form");
   const resetForm = document.querySelector("#reset-form");
-  const validationConfig = {
-    tooltip: {
-      position: "bottom",
-    },
-    errorFieldCssClass: ["invalid"],
-    errorLabelCssClass: "form__error",
-  };
 
   if (loginForm) {
     const loginFormValidate = new JustValidate("#login-form", validationConfig, dict);
@@ -53,10 +47,10 @@ ready(function () {
         },
       ])
       .onSuccess(() => {
-        const faqFormInputs = loginForm.querySelectorAll("input");
-        const faqFormFields = Array.from(faqFormInputs);
+        const loginFormInputs = loginForm.querySelectorAll("input");
+        const loginFormFields = Array.from(loginFormInputs);
         let formData = new FormData(loginForm);
-        faqFormFields.forEach((item) => {
+        loginFormFields.forEach((item) => {
           formData.append(item.id, item.value);
         });
         const plainFormData = Object.fromEntries(formData.entries());

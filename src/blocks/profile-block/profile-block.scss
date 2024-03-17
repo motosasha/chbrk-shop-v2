@@ -1,0 +1,137 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/button-reset";
+@import "../../scss/mixins/link-reset";
+@import "../../scss/mixins/text-styles";
+
+.profile-block {
+  $block-name: &; // #{$block-name}__element
+
+  &__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media screen and (max-width: $screen-t) {
+    	grid-template-columns: 1fr;
+    }
+  }
+
+  &__info {
+    display: grid;
+    gap: 15px;
+    align-content: start;
+    padding: 40px;
+    background: var(--zinc-100);
+    border-radius: 25px;
+
+    @media screen and (max-width: $screen-tl) {
+      padding: clamp(1.5625rem, 1.0734rem + 1.3587vw, 2.5rem);
+    }
+  }
+
+  &__title {
+    @include form-title;
+
+    margin: 0 0 15px;
+    color: var(--orange-600);
+    letter-spacing: -0.01em;
+    text-align: center;
+
+    @media screen and (max-width: $screen-tl) {
+      margin-bottom: clamp(0rem, -0.767rem + 2.1307vw, 0.9375rem);
+    }
+  }
+
+  &__user {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 0;
+    padding: 10px 10px 10px 20px;
+    background-color: var(--back-primary);
+    border-radius: 15px;
+  }
+
+  &__inner {
+    min-width: 0;
+  }
+
+  &__name {
+    width: 100%;
+    overflow: hidden;
+    color: var(--purple-700);
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__email {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__logout {
+    @include button-reset(flex);
+    @include vk-button;
+
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: var(--zinc-100);
+    border-radius: 10px;
+    transition: background-color var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--zinc-200);
+      }
+    }
+  }
+
+  &__logout-icon {
+    width: 30px;
+    height: 30px;
+    stroke-width: 1.5px;
+  }
+
+  &__wallet {
+    @include link-reset;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+    color: inherit;
+    background-color: var(--back-primary);
+    border-radius: 10px;
+    transition: background-color var(--transition-default);
+  }
+
+  &__wallet-sum {
+    display: flex;
+    gap: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  &__wallet-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    stroke-width: 2px;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    stroke-width: 1px;
+  }
+}

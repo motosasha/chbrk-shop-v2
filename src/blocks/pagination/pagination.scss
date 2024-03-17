@@ -1,0 +1,89 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.pagination {
+  $block-name: &; // #{$block-name}__element
+
+	display: flex;
+	align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: var(--zinc-100);
+  border-radius: 25px;
+
+  &__pages {
+    display: flex;
+    margin: 0 5px;
+  }
+
+	&__arrow,
+	&__current,
+	&__link,
+	&__span {
+    @include body;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 45px;
+		height: 45px;
+		padding: 0 5px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background var(--transition-default), color var(--transition-default);
+
+    @media screen and (max-width: $screen-m) {
+      width: 35px;
+      height: 35px;
+    }
+	}
+
+	&__current {
+		color: var(--front-invert);
+		background: var(--orange-600);
+		cursor: default;
+    pointer-events: none;
+	}
+
+	&__link {
+		color: inherit;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--front-invert);
+        background-color: var(--purple-700);
+      }
+    }
+	}
+
+	&__span {
+		cursor: default;
+	}
+
+  &__arrow {
+    opacity: 0.25;
+
+    &[href] {
+      opacity: 1;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--front-invert);
+          background-color: var(--purple-700);
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    color: var(--purple-600);
+    stroke-width: 2px;
+    transition: color var(--transition-default);
+
+    #{$block-name}__arrow[href]:hover & {
+      color: var(--front-invert);
+    }
+  }
+}

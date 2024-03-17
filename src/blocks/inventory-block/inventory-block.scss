@@ -1,0 +1,36 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.inventory-block {
+  $block-name: &; // #{$block-name}__element
+
+  &__filter {
+    display: grid;
+    gap: 10px;
+
+    &--disabled {
+      opacity: 0.25;
+      pointer-events: none;
+    }
+  }
+
+  &__button {
+    @media screen and (max-width: $screen-ti) {
+      padding: 10px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    @media screen and (max-width: $screen-d) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: $screen-ti) {
+    	grid-template-columns: 1fr 1fr;
+    }
+  }
+}

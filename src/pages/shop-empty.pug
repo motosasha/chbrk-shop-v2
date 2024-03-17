@@ -1,0 +1,33 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "Магазин | Cheburek shop"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  +section(json.shop, "wide")(class="shop-block")
+    .section__cols
+      .section__aside
+        .shop-filter
+          form.shop-filter__inner
+            .shop-filter__section
+              .shop-filter__title Цена, ₽
+              .shop-filter__block
+                .shop-filter__row
+                  input.input.shop-filter__input(type="text", placeholder="от", name="priceFrom")
+                  | •
+                  input.input.shop-filter__input(type="text", placeholder="до", name="priceTo")
+            .shop-filter__section
+              .shop-filter__title Тип
+              .shop-filter__block
+                .shop-filter__checkboxes
+                  -
+                    var types = ["Нож", "Пистолет", "Сет", "Питомец"]
+                  each type in types
+                    +checkbox(false, "type")
+                      .checkbox__label!= type
+            button.button.button--primary.shop-filter__button Применить
+      .section__content
+        .section__filler Товары не найдены

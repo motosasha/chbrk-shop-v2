@@ -33,7 +33,7 @@ mixin header(mods)
             .header__user
               if isAuthorisation
                 .user
-                  a.user__wallet(href="#")
+                  a.user__wallet(href="payment.html")
                     .user__wallet-sum #[span 0000000] ₽
                     svg.user__wallet-icon
                       use(href= path.icon + "icon__wallet")
@@ -41,7 +41,7 @@ mixin header(mods)
                     svg.user__icon
                       use(href= path.icon + "icon__user")
                   .user__drop
-                    a.user__profile(href="#")
+                    a.user__profile(href="profile.html")
                       .user__name SegaMegaDrive
                       .user__email mail@mail.ru
                     .user__separator

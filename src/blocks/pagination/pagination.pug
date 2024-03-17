@@ -1,0 +1,101 @@
+//- Все примеси в этом файле должны начинаться c имени блока (pagination)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin pagination(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +pagination("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " shop-tile--" + modsList[i].trim();
+      }
+    }
+
+  .pagination(class=allMods)&attributes(attributes)
+    .pagination__arrow
+      svg.pagination__icon
+        use(href= path.icon + "icon__arrow--prev")
+    .pagination__pages
+      .pagination__current 1
+      a.pagination__link(href="#") 2
+      a.pagination__link(href="#") 3
+      a.pagination__link(href="#") 4
+      a.pagination__link(href="#") 5
+      .pagination__span ...
+      a.pagination__link(href="#") 22
+    a.pagination__arrow(href="#")
+      svg.pagination__icon
+        use(href= path.icon + "icon__arrow--next")
+
+mixin pagination-end(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +pagination("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " shop-tile--" + modsList[i].trim();
+      }
+    }
+
+  .pagination
+    a.pagination__arrow(href="#")
+      svg.pagination__icon
+        use(href= path.icon + "icon__arrow--prev")
+    .pagination__pages
+      a.pagination__link(href="#") 1
+      a.pagination__link(href="#") 2
+      a.pagination__link(href="#") 3
+      a.pagination__link(href="#") 4
+      a.pagination__link(href="#") 5
+      .pagination__span ...
+      .pagination__current 22
+    .pagination__arrow
+      svg.pagination__icon
+        use(href= path.icon + "icon__arrow--next")
+
+mixin pagination-middle(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +pagination("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " shop-tile--" + modsList[i].trim();
+      }
+    }
+  .pagination
+    a.pagination__arrow(href="#")
+      svg.pagination__icon
+        use(href= path.icon + "icon__arrow--prev")
+    .pagination__pages
+      a.pagination__link(href="#") 1
+      .pagination__span ...
+      a.pagination__link(href="#") 6
+      .pagination__current 7
+      a.pagination__link(href="#") 8
+      .pagination__span ...
+      a.pagination__link(href="#") 22
+    a.pagination__arrow(href="#")
+      svg.pagination__icon
+        use(href= path.icon + "icon__arrow--next")

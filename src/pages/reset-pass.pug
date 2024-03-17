@@ -9,23 +9,22 @@ block variables
 block content
   block content
     +section()(class="form-block")
-      .form-block__grid
-        form.form.form-block__form#reset-form
-          h2.form__title Сброс пароля
-          .form__row
-            input.input(type="password", id="resetPass", placeholder="Новый пароль", required)
-            .form__eye
-              svg.form__icon
-                use(href= path.icon + "icon__eye")
-          .form__row
-            input.input(type="password", id="resetPassRepeat", placeholder="Повтор пароля", required)
-            .form__eye
-              svg.form__icon
-                use(href= path.icon + "icon__eye")
-          button.button.button--secondary(type="submit") Сбросить пароль
-          .form__footer
-            a.link.link--alt(href="registration.html") Регистрация
-            a.link(href="login.html") Авторизация
+      form.form.form-block__form#reset-form
+        h2.form__title Сброс пароля
+        .form__row
+          input.input(type="password", id="resetPass", placeholder="Новый пароль", required)
+          .form__eye
+            svg.form__icon
+              use(href= path.icon + "icon__eye")
+        .form__row
+          input.input(type="password", id="resetPassRepeat", placeholder="Повтор пароля", required)
+          .form__eye
+            svg.form__icon
+              use(href= path.icon + "icon__eye")
+        button.button.button--secondary(type="submit") Сбросить пароль
+        .form__footer
+          a.link.link--alt(href="registration.html") Регистрация
+          a.link(href="login.html") Авторизация
 
 block templates
   +popup-reset-success

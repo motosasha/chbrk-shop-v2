@@ -1,0 +1,35 @@
+//- Все примеси в этом файле должны начинаться c имени блока (shop-tile)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin shop-tile(data, index, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные
+  //-   index   {number} - индекс
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +shop-tile(object, "some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " shop-tile--" + modsList[i].trim();
+      }
+    }
+
+  .shop-tile(class=allMods, title!= data.title)&attributes(attributes)
+    -
+      var number = (index + 1).toString().padStart(2, "0")
+    a.shop-tile__miniature(href= path.img + "shop__good--" + number + ".webp", data-glightbox, data-gallery="goods-gallery-" + number)
+      img.shop-tile__image(src= path.img + "shop__good--" + number + "-mini.webp", loading="lazy", alt= data.title)
+    .shop-tile__inner
+      .shop-tile__title!= data.title
+      .shop-tile__price #[span #{data.price}] ₽
+      if !data.isInCart
+        button.button.button--secondary.shop-tile__button В корзину
+      else
+        button.button.button--secondary.shop-tile__button(disabled) В корзине

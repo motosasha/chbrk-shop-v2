@@ -41,7 +41,6 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 1;
-  letter-spacing: 0.36px;
   text-transform: uppercase;
 }
 
@@ -136,7 +135,7 @@
 
 @mixin button-title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: clamp(0.9375rem, 0.8197rem + 0.4098vw, 1.25rem);
   line-height: 1;
   text-transform: uppercase;
 }
@@ -144,4 +143,10 @@
 @mixin checkbox-label {
   font-size: 15px;
   line-height: 1.3334;
+}
+
+@mixin shop-tile-title {
+  font-weight: 700;
+  font-size: clamp(0.9375rem, 0.6673rem + 0.9398vw, 1.25rem);
+  line-height: 1.25;
 }

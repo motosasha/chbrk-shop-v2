@@ -1,0 +1,32 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/text-styles";
+
+.shop-block {
+  $block-name: &; // #{$block-name}__element
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+
+    @media screen and (max-width: $screen-dl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (max-width: $screen-d) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: $screen-ti) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: $screen-m) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

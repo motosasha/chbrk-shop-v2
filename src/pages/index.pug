@@ -17,7 +17,7 @@ block content
           .collections__item-title!= tile.title
 
   +section(json.sectionFaq, "default")(class="faq")
-    .faq__grid
+    .faq__cols
       .faq__questions
         +accordion(json.sectionFaq.questions)
           a.accordion__video(href="https://youtu.be/ooXgTHyUNJM")

@@ -1,0 +1,44 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - isAuthorisation = true
+  - pageTitle = "Профиль | Cheburek shop"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  +section({title: "Профиль"}, "wide")(class="profile-block")
+    .profile-block__cols
+      .profile-block__info
+        .profile-block__title Аккаунт
+        .profile-block__user
+          .profile-block__inner
+            .profile-block__name SegaMegaDrive
+            .profile-block__email mail@mail.ru
+          button.profile-block__logout
+            svg.profile-block__logout-icon
+              use(href= path.icon + "icon__logout")
+            | Выход
+        .profile-block__wallet
+          .profile-block__wallet-sum #[span 0000000] ₽
+          svg.profile-block__wallet-icon
+            use(href= path.icon + "icon__wallet")
+        a.button.button--primary(href="payment.html") Пополнить баланс
+      .profile-block__form
+        form.form#reset-form
+          h2.form__title Смена пароля
+          .form__row
+            input.input(type="password", id="resetPass", placeholder="Новый пароль", required)
+            .form__eye
+              svg.form__icon
+                use(href= path.icon + "icon__eye")
+          .form__row
+            input.input(type="password", id="resetPassRepeat", placeholder="Повтор пароля", required)
+            .form__eye
+              svg.form__icon
+                use(href= path.icon + "icon__eye")
+          button.button.button--secondary(type="submit") Сохранить
+
+block templates
+  +popup-reset-success
