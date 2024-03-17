@@ -16,7 +16,8 @@
     flex: 0 0 auto;
     width: 100%;
 
-    .ovh & { // stylelint-disable-line
+    .ovh &, // stylelint-disable-line
+    .glightbox-open & { // stylelint-disable-line
       width: calc(100% - var(--css-scroll-size));
     }
   }
