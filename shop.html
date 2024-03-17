@@ -25,7 +25,7 @@
     <meta property="og:image" content="./img/favicon/apple-touch-icon-180x180.png">
     <meta property="og:description" content="og:description">
     <meta property="vk:image" content="./img/favicon/logo-vk.png">
-    <title>Cheburek shop</title>
+    <title>Магазин | Cheburek shop</title>
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
     <link rel="stylesheet" href="./css/style.css"><script>// Remove the "no-js" class from the html, add the "js" class: from the style level we know whether JS works
@@ -461,121 +461,324 @@ projectNavButton.addEventListener("click", () => {
 </script><!-- delete this block if production-->
     </div>
     <div class="page">
-      <h1 class="page__title" hidden>Cheburek shop</h1>
+      <h1 class="page__title" hidden>Cheburek shop</h1><button class="page__cart-button" data-cart-counter="2" data-panel-trigger="cart"><svg class="page__cart-icon">
+          <use href="./img/svgSprite.svg#icon__cart"></use>
+        </svg></button>
+      <div class="page__cart">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="panel__inner">
+              <h2 class="panel__title">Корзина</h2>
+              <div class="panel__amount">Предметов: <span>2</span></div>
+            </div><button class="panel__close"><svg class="panel__icon">
+                <use href="img/svgSprite.svg#icon__close"></use>
+              </svg></button>
+          </div>
+          <div class="panel__scroll">
+            <div class="panel__body">
+              <ul class="panel__list">
+                <li class="panel__item">
+                  <div class="cart-card">
+                    <div class="cart-card__inner"><img class="cart-card__image" src="./img/shop__good--01-mini.webp" loading="lazy" alt="Flames" />
+                      <div class="cart-card__info">
+                        <div class="cart-card__title">Flames</div>
+                        <div class="cart-card__price"><span>29</span> ₽</div>
+                        <filedset class="number cart-card__number" data-quantity="data-quantity"><button class="number__button number__button--sub" type="button">−</button><button class="number__button number__button--add" type="button">+</button><input class="number__input cart-card__number" type="number" min="1" max="5" value="1" pattern="[0-9]+" /></filedset>
+                      </div><button class="cart-card__delete"><svg class="cart-card__icon">
+                          <use href="img/svgSprite.svg#icon__trash"></use>
+                        </svg></button>
+                    </div>
+                  </div>
+                </li>
+                <li class="panel__item">
+                  <div class="cart-card">
+                    <div class="cart-card__inner"><img class="cart-card__image" src="./img/shop__good--02-mini.webp" loading="lazy" alt="Fang" />
+                      <div class="cart-card__info">
+                        <div class="cart-card__title">Fang</div>
+                        <div class="cart-card__price"><span>32</span> ₽</div>
+                        <filedset class="number cart-card__number" data-quantity="data-quantity"><button class="number__button number__button--sub" type="button">−</button><button class="number__button number__button--add" type="button">+</button><input class="number__input cart-card__number" type="number" min="1" max="5" value="1" pattern="[0-9]+" /></filedset>
+                      </div><button class="cart-card__delete"><svg class="cart-card__icon">
+                          <use href="img/svgSprite.svg#icon__trash"></use>
+                        </svg></button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel__footer panel__footer--cart">
+            <form class="panel__cart-form" id="promo-form"><input class="input panel__input" id="promoField" type="text" placeholder="Промокод" required="required" /><button class="button button--primary panel__promo-button" type="submit">Применить</button></form>
+            <div class="panel__cart-total">
+              <div class="panel__cart-total-title">К оплате:</div>
+              <div class="panel__cart-total-price"><span>61</span> ₽</div>
+            </div>
+            <div class="panel__cart-actions"><button class="button button--primary panel__button">Купить</button><button class="button button--secondary panel__button">Очистить</button></div>
+          </div>
+        </div>
+      </div>
       <div class="page__header">
         <div class="header">
           <div class="header__inner">
             <div class="container">
-              <div class="header__row">
-                <div class="header__logo"><svg class="logo">
+              <div class="header__row"><a class="header__logo" href="/chbrk-shop-v2/"><svg class="logo">
                     <use href="./img/svgSprite.svg#logo__cheburek"></use>
-                  </svg></div>
+                  </svg></a>
                 <div class="header__links">
                   <nav class="nav header__nav">
                     <ul class="nav__inner">
                       <li class="nav__item"><a class="nav__link" href="shop.html">Магазин</a></li>
+                      <li class="nav__item"><a class="nav__link" href="inventory.html">Инвентарь</a></li>
                       <li class="nav__item"><a class="nav__link" href="faq.html">FAQ</a></li>
                       <li class="nav__item"><a class="nav__link" href="https://www.youtube.com/watch?v=VMsHB4MCV_w.html" target="_black">Инструкция</a></li>
                     </ul>
                   </nav>
                   <div class="header__separator"></div>
-                  <div class="header__user"><a class="header__login" href="login.html">Вход</a></div>
+                  <div class="header__user">
+                    <div class="user"><a class="user__wallet" href="payment.html">
+                        <div class="user__wallet-sum"><span>0000000</span> ₽</div><svg class="user__wallet-icon">
+                          <use href="./img/svgSprite.svg#icon__wallet"></use>
+                        </svg>
+                      </a><button class="user__button"><svg class="user__icon">
+                          <use href="./img/svgSprite.svg#icon__user"></use>
+                        </svg></button>
+                      <div class="user__drop"><a class="user__profile" href="profile.html">
+                          <div class="user__name">SegaMegaDrive</div>
+                          <div class="user__email">mail@mail.ru</div>
+                        </a>
+                        <div class="user__separator"></div><button class="user__logout"><svg class="user__drop-icon">
+                            <use href="./img/svgSprite.svg#icon__logout"></use>
+                          </svg>Выход</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="page__main page__main--is-main-page">
-        <section class="hero"></section>
-        <section class="section collections">
+      <div class="page__main">
+        <section class="section shop-block">
           <div class="container">
             <div class="section__inner">
               <div class="section__grid">
-                <div class="section__header">
-                  <h2 class="section__title">Наши коллекции</h2>
-                  <div class="section__arrow"><svg class="section__arrow-end">
-                      <use href="./img/svgSprite.svg#icon__arrow-end"></use>
-                    </svg></div>
+                <div class="section__header section__header--wide">
+                  <h2 class="section__title">Магазин</h2>
+                  <div class="section__arrow"></div>
                 </div>
               </div>
               <div class="section__body">
-                <div class="collections__tiles"><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--collections.webp" alt="">
-                    <div class="collections__item-title">Collections</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--godly.webp" alt="">
-                    <div class="collections__item-title">Godly</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--vintage.webp" alt="">
-                    <div class="collections__item-title">Vintage</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--pets.webp" alt="">
-                    <div class="collections__item-title">Pets</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--ancient.webp" alt="">
-                    <div class="collections__item-title">Ancient</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--chroma.webp" alt="">
-                    <div class="collections__item-title">Chroma</div>
-                  </a></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section faq">
-          <div class="container">
-            <div class="section__inner">
-              <div class="section__grid">
-                <div class="section__header">
-                  <h2 class="section__title">Вопрос-ответ</h2>
-                  <div class="section__arrow"><svg class="section__arrow-end">
-                      <use href="./img/svgSprite.svg#icon__arrow-end"></use>
-                    </svg></div>
-                </div>
-              </div>
-              <div class="section__body">
-                <div class="faq__cols">
-                  <div class="faq__questions">
-                    <div class="accordion">
-                      <div class="accordion__item accordion__item--active">
-                        <div class="accordion__head">Как купить скины?</div>
-                        <div class="accordion__body"><a class="accordion__video" href="https://youtu.be/ooXgTHyUNJM"><svg class="accordion__play">
-                              <use href="./img/svgSprite.svg#icon__play"></use>
-                            </svg><img class="accordion__video-bg" src="./img/accordion__video.webp" alt=""></a></div>
-                      </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Обман ли это?</div>
-                        <div class="accordion__body">
-                          <p>Мы работаем уже 3 года!</p>
-                          <p>Наш старый магазин по MM2: <a href='https://vk.com/4ebyrekshop' , target='_blank'>https://vk.com/4ebyrekshop</a></p>
+                <div class="section__cols">
+                  <div class="section__aside">
+                    <div class="shop-filter">
+                      <form class="shop-filter__inner">
+                        <div class="shop-filter__section">
+                          <div class="shop-filter__title">Цена, ₽</div>
+                          <div class="shop-filter__block">
+                            <div class="shop-filter__row"><input class="input shop-filter__input" type="text" placeholder="от" name="priceFrom">•<input class="input shop-filter__input" type="text" placeholder="до" name="priceTo"></div>
+                          </div>
+                        </div>
+                        <div class="shop-filter__section">
+                          <div class="shop-filter__title">Тип</div>
+                          <div class="shop-filter__block">
+                            <div class="shop-filter__checkboxes"><label class="checkbox"><input class="checkbox__input" type="checkbox" name="type" /><span class="checkbox__fake-input"></span>
+                                <div class="checkbox__label">Нож</div>
+                              </label><label class="checkbox"><input class="checkbox__input" type="checkbox" name="type" /><span class="checkbox__fake-input"></span>
+                                <div class="checkbox__label">Пистолет</div>
+                              </label><label class="checkbox"><input class="checkbox__input" type="checkbox" name="type" /><span class="checkbox__fake-input"></span>
+                                <div class="checkbox__label">Сет</div>
+                              </label><label class="checkbox"><input class="checkbox__input" type="checkbox" name="type" /><span class="checkbox__fake-input"></span>
+                                <div class="checkbox__label">Питомец</div>
+                              </label></div>
+                          </div>
+                        </div><button class="button button--primary shop-filter__button">Применить</button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="section__content">
+                    <div class="shop-block__grid">
+                      <div class="shop-tile" title="Flames"><a class="shop-tile__miniature" href="./img/shop__good--01.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-01"><img class="shop-tile__image" src="./img/shop__good--01-mini.webp" loading="lazy" alt="Flames" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Flames</div>
+                          <div class="shop-tile__price"><span>29</span> ₽</div><button class="button button--secondary shop-tile__button" disabled="disabled">В корзине</button>
                         </div>
                       </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Как можно связаться с вами для сотрудничества?</div>
-                        <div class="accordion__body">
-                          <p>Сотрудничество <a href='mailto:shop4ebyrek@yandex.ru'>shop4ebyrek@yandex.ru</a></p>
+                      <div class="shop-tile" title="Fang"><a class="shop-tile__miniature" href="./img/shop__good--02.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-02"><img class="shop-tile__image" src="./img/shop__good--02-mini.webp" loading="lazy" alt="Fang" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Fang</div>
+                          <div class="shop-tile__price"><span>32</span> ₽</div><button class="button button--secondary shop-tile__button" disabled="disabled">В корзине</button>
                         </div>
                       </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Какие методы оплаты у вас присутствуют?</div>
-                        <div class="accordion__body">
-                          <p>Для этого необходимо зарегистрироваться в личном кабинете и нажать на кнопку <a href='payment.html' target='_blank'>«пополнить баланс»</a>.</p>
-                          <p>Минимальная сумма заказа в нашем магазине <strong>50 ₽</strong>.</p>
-                          <p>Что это значит? Вы должны собрать ножей, пистолетов и петов на сумму не менее <strong>50 ₽</strong>.</p>
+                      <div class="shop-tile" title="Battleaxe"><a class="shop-tile__miniature" href="./img/shop__good--03.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-03"><img class="shop-tile__image" src="./img/shop__good--03-mini.webp" loading="lazy" alt="Battleaxe" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Battleaxe</div>
+                          <div class="shop-tile__price"><span>15</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
                         </div>
                       </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Что делать если бот пишет: «У вас нет активных заказов»?</div>
-                        <div class="accordion__body">
-                          <p>Надо иметь активный заказ.</p>
-                          <p>Убрать пробел в нике при выводе на сайте, если он есть.</p>
-                          <p>Если ничего не работает, то выйти из профиля на сайте и зайти в него обратно.</p>
+                      <div class="shop-tile" title="Peppermint"><a class="shop-tile__miniature" href="./img/shop__good--04.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-04"><img class="shop-tile__image" src="./img/shop__good--04-mini.webp" loading="lazy" alt="Peppermint" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Peppermint</div>
+                          <div class="shop-tile__price"><span>18</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Boneblade"><a class="shop-tile__miniature" href="./img/shop__good--05.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-05"><img class="shop-tile__image" src="./img/shop__good--05-mini.webp" loading="lazy" alt="Boneblade" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Boneblade</div>
+                          <div class="shop-tile__price"><span>16</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Bioblade"><a class="shop-tile__miniature" href="./img/shop__good--06.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-06"><img class="shop-tile__image" src="./img/shop__good--06-mini.webp" loading="lazy" alt="Bioblade" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Bioblade</div>
+                          <div class="shop-tile__price"><span>20</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Clockwork"><a class="shop-tile__miniature" href="./img/shop__good--07.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-07"><img class="shop-tile__image" src="./img/shop__good--07-mini.webp" loading="lazy" alt="Clockwork" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Clockwork</div>
+                          <div class="shop-tile__price"><span>9</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Cookieblade"><a class="shop-tile__miniature" href="./img/shop__good--08.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-08"><img class="shop-tile__image" src="./img/shop__good--08-mini.webp" loading="lazy" alt="Cookieblade" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Cookieblade</div>
+                          <div class="shop-tile__price"><span>17</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Prismatic"><a class="shop-tile__miniature" href="./img/shop__good--09.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-09"><img class="shop-tile__image" src="./img/shop__good--09-mini.webp" loading="lazy" alt="Prismatic" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Prismatic</div>
+                          <div class="shop-tile__price"><span>32</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Heartblade"><a class="shop-tile__miniature" href="./img/shop__good--10.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-10"><img class="shop-tile__image" src="./img/shop__good--10-mini.webp" loading="lazy" alt="Heartblade" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Heartblade</div>
+                          <div class="shop-tile__price"><span>29</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Deathshard"><a class="shop-tile__miniature" href="./img/shop__good--11.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-11"><img class="shop-tile__image" src="./img/shop__good--11-mini.webp" loading="lazy" alt="Deathshard" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Deathshard</div>
+                          <div class="shop-tile__price"><span>40</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Vampire's edge"><a class="shop-tile__miniature" href="./img/shop__good--12.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-12"><img class="shop-tile__image" src="./img/shop__good--12-mini.webp" loading="lazy" alt="Vampire's edge" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Vampire's edge</div>
+                          <div class="shop-tile__price"><span>33</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Orange seer"><a class="shop-tile__miniature" href="./img/shop__good--13.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-13"><img class="shop-tile__image" src="./img/shop__good--13-mini.webp" loading="lazy" alt="Orange seer" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Orange seer</div>
+                          <div class="shop-tile__price"><span>26</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Seer"><a class="shop-tile__miniature" href="./img/shop__good--14.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-14"><img class="shop-tile__image" src="./img/shop__good--14-mini.webp" loading="lazy" alt="Seer" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Seer</div>
+                          <div class="shop-tile__price"><span>14</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Yellow seer"><a class="shop-tile__miniature" href="./img/shop__good--15.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-15"><img class="shop-tile__image" src="./img/shop__good--15-mini.webp" loading="lazy" alt="Yellow seer" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Yellow seer</div>
+                          <div class="shop-tile__price"><span>83</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Red seer"><a class="shop-tile__miniature" href="./img/shop__good--16.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-16"><img class="shop-tile__image" src="./img/shop__good--16-mini.webp" loading="lazy" alt="Red seer" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Red seer</div>
+                          <div class="shop-tile__price"><span>120</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Spider"><a class="shop-tile__miniature" href="./img/shop__good--17.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-17"><img class="shop-tile__image" src="./img/shop__good--17-mini.webp" loading="lazy" alt="Spider" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Spider</div>
+                          <div class="shop-tile__price"><span>167</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Blue seer"><a class="shop-tile__miniature" href="./img/shop__good--18.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-18"><img class="shop-tile__image" src="./img/shop__good--18-mini.webp" loading="lazy" alt="Blue seer" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Blue seer</div>
+                          <div class="shop-tile__price"><span>1000</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Purple seer"><a class="shop-tile__miniature" href="./img/shop__good--19.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-19"><img class="shop-tile__image" src="./img/shop__good--19-mini.webp" loading="lazy" alt="Purple seer" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Purple seer</div>
+                          <div class="shop-tile__price"><span>8</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Ice shard"><a class="shop-tile__miniature" href="./img/shop__good--20.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-20"><img class="shop-tile__image" src="./img/shop__good--20-mini.webp" loading="lazy" alt="Ice shard" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Ice shard</div>
+                          <div class="shop-tile__price"><span>15</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Frostsaber"><a class="shop-tile__miniature" href="./img/shop__good--21.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-21"><img class="shop-tile__image" src="./img/shop__good--21-mini.webp" loading="lazy" alt="Frostsaber" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Frostsaber</div>
+                          <div class="shop-tile__price"><span>25</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Winter's edge"><a class="shop-tile__miniature" href="./img/shop__good--22.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-22"><img class="shop-tile__image" src="./img/shop__good--22-mini.webp" loading="lazy" alt="Winter's edge" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Winter's edge</div>
+                          <div class="shop-tile__price"><span>78</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Gingerblade"><a class="shop-tile__miniature" href="./img/shop__good--23.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-23"><img class="shop-tile__image" src="./img/shop__good--23-mini.webp" loading="lazy" alt="Gingerblade" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Gingerblade</div>
+                          <div class="shop-tile__price"><span>90</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Ice dragon"><a class="shop-tile__miniature" href="./img/shop__good--24.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-24"><img class="shop-tile__image" src="./img/shop__good--24-mini.webp" loading="lazy" alt="Ice dragon" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Ice dragon</div>
+                          <div class="shop-tile__price"><span>5</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Frostbite"><a class="shop-tile__miniature" href="./img/shop__good--25.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-25"><img class="shop-tile__image" src="./img/shop__good--25-mini.webp" loading="lazy" alt="Frostbite" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Frostbite</div>
+                          <div class="shop-tile__price"><span>12</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Hallow's blade"><a class="shop-tile__miniature" href="./img/shop__good--26.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-26"><img class="shop-tile__image" src="./img/shop__good--26-mini.webp" loading="lazy" alt="Hallow's blade" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Hallow's blade</div>
+                          <div class="shop-tile__price"><span>67</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Heat"><a class="shop-tile__miniature" href="./img/shop__good--27.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-27"><img class="shop-tile__image" src="./img/shop__good--27-mini.webp" loading="lazy" alt="Heat" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Heat</div>
+                          <div class="shop-tile__price"><span>43</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
+                        </div>
+                      </div>
+                      <div class="shop-tile" title="Xmas"><a class="shop-tile__miniature" href="./img/shop__good--28.webp" data-glightbox="data-glightbox" data-gallery="goods-gallery-28"><img class="shop-tile__image" src="./img/shop__good--28-mini.webp" loading="lazy" alt="Xmas" /></a>
+                        <div class="shop-tile__inner">
+                          <div class="shop-tile__title">Xmas</div>
+                          <div class="shop-tile__price"><span>27</span> ₽</div><button class="button button--secondary shop-tile__button">В корзину</button>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="faq__form">
-                    <form class="form faq-form">
-                      <h2 class="faq-form__title">Задать вопрос</h2>
-                      <div class="form__row"><input class="input" type="text" id="faqName" placeholder="Имя" required="required" /></div>
-                      <div class="form__row"><input class="input" type="email" id="faqEmail" placeholder="Почта" required="required" /></div>
-                      <div class="form__row"><textarea class="textarea" placeholder="Сообщение" id="faqMessage" required="required"></textarea></div><button class="button button--primary" type="submit">Отправить</button>
-                    </form>
+                    <div class="section__pagination">
+                      <div class="pagination">
+                        <div class="pagination__arrow"><svg class="pagination__icon">
+                            <use href="./img/svgSprite.svg#icon__arrow--prev"></use>
+                          </svg></div>
+                        <div class="pagination__pages">
+                          <div class="pagination__current">1</div><a class="pagination__link" href="#">2</a><a class="pagination__link" href="#">3</a><a class="pagination__link" href="#">4</a><a class="pagination__link" href="#">5</a>
+                          <div class="pagination__span">...</div><a class="pagination__link" href="#">22</a>
+                        </div><a class="pagination__arrow" href="#"><svg class="pagination__icon">
+                            <use href="./img/svgSprite.svg#icon__arrow--next"></use>
+                          </svg></a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -586,14 +789,14 @@ projectNavButton.addEventListener("click", () => {
       <div class="page__footer">
         <div class="footer">
           <div class="container">
-            <div class="footer__inner">
-              <div class="footer__logo"><svg class="logo">
+            <div class="footer__inner"><a class="footer__logo" href="/chbrk-shop-v2/"><svg class="logo  logo--footer">
                   <use href="./img/svgSprite.svg#logo__cheburek"></use>
-                </svg></div>
+                </svg></a>
               <div class="footer__links">
                 <nav class="nav footer__nav">
                   <ul class="nav__inner">
                     <li class="nav__item"><a class="nav__link" href="shop.html">Магазин</a></li>
+                    <li class="nav__item"><a class="nav__link" href="inventory.html">Инвентарь</a></li>
                     <li class="nav__item"><a class="nav__link" href="faq.html">FAQ</a></li>
                     <li class="nav__item"><a class="nav__link" href="https://www.youtube.com/watch?v=VMsHB4MCV_w.html" target="_black">Инструкция</a></li>
                   </ul>

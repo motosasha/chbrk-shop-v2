@@ -25,7 +25,7 @@
     <meta property="og:image" content="./img/favicon/apple-touch-icon-180x180.png">
     <meta property="og:description" content="og:description">
     <meta property="vk:image" content="./img/favicon/logo-vk.png">
-    <title>Cheburek shop</title>
+    <title>Cart-empty</title>
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
     <link rel="stylesheet" href="./css/style.css"><script>// Remove the "no-js" class from the html, add the "js" class: from the style level we know whether JS works
@@ -461,139 +461,83 @@ projectNavButton.addEventListener("click", () => {
 </script><!-- delete this block if production-->
     </div>
     <div class="page">
-      <h1 class="page__title" hidden>Cheburek shop</h1>
+      <h1 class="page__title" hidden>Cheburek shop</h1><button class="page__cart-button" data-panel-trigger="cart"><svg class="page__cart-icon">
+          <use href="./img/svgSprite.svg#icon__cart"></use>
+        </svg></button>
+      <div class="page__cart">
+        <div class="panel">
+          <div class="panel__header">
+            <div class="panel__inner">
+              <h2 class="panel__title">Корзина</h2>
+              <div class="panel__amount">Предметов: <span>0</span></div>
+            </div><button class="panel__close"><svg class="panel__icon">
+                <use href="img/svgSprite.svg#icon__close"></use>
+              </svg></button>
+          </div>
+          <div class="panel__scroll">
+            <div class="panel__body">
+              <div class="panel__filler">Нет продуктов</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="page__header">
         <div class="header">
           <div class="header__inner">
             <div class="container">
-              <div class="header__row">
-                <div class="header__logo"><svg class="logo">
+              <div class="header__row"><a class="header__logo" href="/chbrk-shop-v2/"><svg class="logo">
                     <use href="./img/svgSprite.svg#logo__cheburek"></use>
-                  </svg></div>
+                  </svg></a>
                 <div class="header__links">
                   <nav class="nav header__nav">
                     <ul class="nav__inner">
                       <li class="nav__item"><a class="nav__link" href="shop.html">Магазин</a></li>
+                      <li class="nav__item"><a class="nav__link" href="inventory.html">Инвентарь</a></li>
                       <li class="nav__item"><a class="nav__link" href="faq.html">FAQ</a></li>
                       <li class="nav__item"><a class="nav__link" href="https://www.youtube.com/watch?v=VMsHB4MCV_w.html" target="_black">Инструкция</a></li>
                     </ul>
                   </nav>
                   <div class="header__separator"></div>
-                  <div class="header__user"><a class="header__login" href="login.html">Вход</a></div>
+                  <div class="header__user">
+                    <div class="user"><a class="user__wallet" href="payment.html">
+                        <div class="user__wallet-sum"><span>0000000</span> ₽</div><svg class="user__wallet-icon">
+                          <use href="./img/svgSprite.svg#icon__wallet"></use>
+                        </svg>
+                      </a><button class="user__button"><svg class="user__icon">
+                          <use href="./img/svgSprite.svg#icon__user"></use>
+                        </svg></button>
+                      <div class="user__drop"><a class="user__profile" href="profile.html">
+                          <div class="user__name">SegaMegaDrive</div>
+                          <div class="user__email">mail@mail.ru</div>
+                        </a>
+                        <div class="user__separator"></div><button class="user__logout"><svg class="user__drop-icon">
+                            <use href="./img/svgSprite.svg#icon__logout"></use>
+                          </svg>Выход</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="page__main page__main--is-main-page">
-        <section class="hero"></section>
-        <section class="section collections">
-          <div class="container">
-            <div class="section__inner">
-              <div class="section__grid">
-                <div class="section__header">
-                  <h2 class="section__title">Наши коллекции</h2>
-                  <div class="section__arrow"><svg class="section__arrow-end">
-                      <use href="./img/svgSprite.svg#icon__arrow-end"></use>
-                    </svg></div>
-                </div>
-              </div>
-              <div class="section__body">
-                <div class="collections__tiles"><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--collections.webp" alt="">
-                    <div class="collections__item-title">Collections</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--godly.webp" alt="">
-                    <div class="collections__item-title">Godly</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--vintage.webp" alt="">
-                    <div class="collections__item-title">Vintage</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--pets.webp" alt="">
-                    <div class="collections__item-title">Pets</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--ancient.webp" alt="">
-                    <div class="collections__item-title">Ancient</div>
-                  </a><a class="collections__item" href="#"><img class="collections__image" src="./img/collections__tile--chroma.webp" alt="">
-                    <div class="collections__item-title">Chroma</div>
-                  </a></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="section faq">
-          <div class="container">
-            <div class="section__inner">
-              <div class="section__grid">
-                <div class="section__header">
-                  <h2 class="section__title">Вопрос-ответ</h2>
-                  <div class="section__arrow"><svg class="section__arrow-end">
-                      <use href="./img/svgSprite.svg#icon__arrow-end"></use>
-                    </svg></div>
-                </div>
-              </div>
-              <div class="section__body">
-                <div class="faq__cols">
-                  <div class="faq__questions">
-                    <div class="accordion">
-                      <div class="accordion__item accordion__item--active">
-                        <div class="accordion__head">Как купить скины?</div>
-                        <div class="accordion__body"><a class="accordion__video" href="https://youtu.be/ooXgTHyUNJM"><svg class="accordion__play">
-                              <use href="./img/svgSprite.svg#icon__play"></use>
-                            </svg><img class="accordion__video-bg" src="./img/accordion__video.webp" alt=""></a></div>
-                      </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Обман ли это?</div>
-                        <div class="accordion__body">
-                          <p>Мы работаем уже 3 года!</p>
-                          <p>Наш старый магазин по MM2: <a href='https://vk.com/4ebyrekshop' , target='_blank'>https://vk.com/4ebyrekshop</a></p>
-                        </div>
-                      </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Как можно связаться с вами для сотрудничества?</div>
-                        <div class="accordion__body">
-                          <p>Сотрудничество <a href='mailto:shop4ebyrek@yandex.ru'>shop4ebyrek@yandex.ru</a></p>
-                        </div>
-                      </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Какие методы оплаты у вас присутствуют?</div>
-                        <div class="accordion__body">
-                          <p>Для этого необходимо зарегистрироваться в личном кабинете и нажать на кнопку <a href='payment.html' target='_blank'>«пополнить баланс»</a>.</p>
-                          <p>Минимальная сумма заказа в нашем магазине <strong>50 ₽</strong>.</p>
-                          <p>Что это значит? Вы должны собрать ножей, пистолетов и петов на сумму не менее <strong>50 ₽</strong>.</p>
-                        </div>
-                      </div>
-                      <div class="accordion__item">
-                        <div class="accordion__head">Что делать если бот пишет: «У вас нет активных заказов»?</div>
-                        <div class="accordion__body">
-                          <p>Надо иметь активный заказ.</p>
-                          <p>Убрать пробел в нике при выводе на сайте, если он есть.</p>
-                          <p>Если ничего не работает, то выйти из профиля на сайте и зайти в него обратно.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="faq__form">
-                    <form class="form faq-form">
-                      <h2 class="faq-form__title">Задать вопрос</h2>
-                      <div class="form__row"><input class="input" type="text" id="faqName" placeholder="Имя" required="required" /></div>
-                      <div class="form__row"><input class="input" type="email" id="faqEmail" placeholder="Почта" required="required" /></div>
-                      <div class="form__row"><textarea class="textarea" placeholder="Сообщение" id="faqMessage" required="required"></textarea></div><button class="button button--primary" type="submit">Отправить</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <div class="page__main">
+        <div class="container">
+          <div class="content-filler">content-filler</div>
+        </div>
       </div>
       <div class="page__footer">
         <div class="footer">
           <div class="container">
-            <div class="footer__inner">
-              <div class="footer__logo"><svg class="logo">
+            <div class="footer__inner"><a class="footer__logo" href="/chbrk-shop-v2/"><svg class="logo  logo--footer">
                   <use href="./img/svgSprite.svg#logo__cheburek"></use>
-                </svg></div>
+                </svg></a>
               <div class="footer__links">
                 <nav class="nav footer__nav">
                   <ul class="nav__inner">
                     <li class="nav__item"><a class="nav__link" href="shop.html">Магазин</a></li>
+                    <li class="nav__item"><a class="nav__link" href="inventory.html">Инвентарь</a></li>
                     <li class="nav__item"><a class="nav__link" href="faq.html">FAQ</a></li>
                     <li class="nav__item"><a class="nav__link" href="https://www.youtube.com/watch?v=VMsHB4MCV_w.html" target="_black">Инструкция</a></li>
                   </ul>
