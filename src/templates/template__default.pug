@@ -4,6 +4,7 @@ include mixins.pug
 
 - var isMainPage = false
 - var isAuthorisation = false
+- var isEmptyCart = false
 - var pageTitle = "title"
 - var metaDescription = "description"
 - var metaKeywords = "keywords"
@@ -29,6 +30,19 @@ html(class="no-js", lang="ru")
 
     .page
       h1.page__title(hidden) Cheburek shop
+
+      if isAuthorisation
+        if !isEmptyCart
+          button.page__cart-button(data-cart-counter="2", data-panel-trigger="cart")
+            svg.page__cart-icon
+              use(href= path.icon + "icon__cart")
+        else
+          button.page__cart-button(data-panel-trigger="cart")
+            svg.page__cart-icon
+              use(href= path.icon + "icon__cart")
+        .page__cart
+          +panel
+
       .page__header
         +header
       .page__main(class= isMainPage ? "page__main--is-main-page": "")
@@ -37,6 +51,7 @@ html(class="no-js", lang="ru")
             .content-filler content-filler
       .page__footer
         +footer
+      .page__darker
 
     +popup
     +popup-error

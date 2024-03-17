@@ -1,0 +1,197 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/button-reset";
+@import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/list-reset";
+@import "../../scss/mixins/text-styles";
+
+.panel {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--back-primary);
+
+  &__header {
+    @include flex-center-sb;
+
+    flex: 0 0 auto;
+    height: 80px;
+    padding: 25px;
+
+    @media screen and (max-width: $screen-t) {
+      padding: 15px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  &__amount {
+    @include vk-button;
+
+    margin-top: 3px;
+  }
+
+  &__close {
+    @include button-reset;
+
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    color: var(--purple-700);
+    pointer-events: none;
+    stroke-width: 2px;
+  }
+
+  &__scroll {
+    flex: 1 0 auto;
+    height: 10px;
+    overflow: hidden auto;
+  }
+
+  &__body {
+    padding: 15px 25px;
+
+    @media screen and (max-width: $screen-t) {
+      padding: 15px;
+    }
+  }
+
+  &__filler {
+    @include edging-link;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 30px 15px;
+    color: var(--orange-600);
+    text-align: center;
+    border: 1px solid var(--zinc-200);
+    border-radius: 25px;
+  }
+
+  &__list {
+    @include list-reset;
+
+    display: grid;
+    gap: 10px;
+  }
+
+  &__footer {
+    display: grid;
+    flex: 0 0 auto;
+    gap: 16px;
+    padding: 25px;
+
+    @media screen and (max-width: $screen-t) {
+      padding: 15px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__cart-total {
+    display: flex;
+    gap: 25px;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__cart-total-title {
+    @include edging-link;
+  }
+
+  &__cart-total-price {
+    @include wallet;
+
+    color: var(--purple-700);
+    font-weight: 700;
+  }
+
+  &__cart-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    @media screen and (max-width: $screen-t) {
+      gap: 5px;
+    }
+  }
+
+  &__cart-form {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    @media screen and (max-width: $screen-t) {
+      grid-template-columns: 2fr 1fr;
+      gap: 5px;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 4px 14px;
+    color: var(--error);
+    background: var(--back-primary);
+    border: 1px solid var(--zinc-300);
+    border-radius: 15px;
+    transform: translateY(25px);
+
+    &::before {
+      position: absolute;
+      z-index: 3;
+      inset: -5px auto auto calc(50% - 5px);
+      display: block;
+      width: 0;
+      height: 0;
+      border-right: solid 5px transparent;
+      border-bottom: solid 5px var(--back-primary);
+      border-left: solid 5px transparent;
+      transform: rotate(0);
+      content: "";
+    }
+
+    &::after {
+      position: absolute;
+      top: -6px;
+      left: calc(50% - 7px);
+      z-index: 2;
+      border-right: solid 7px transparent;
+      border-bottom: solid 6px var(--zinc-300);
+      border-left: solid 7px transparent;
+      content: "";
+    }
+  }
+
+  :is(&) &__input {
+    height: 45px;
+    padding: 15px;
+  }
+
+  &__button {
+    @media screen and (max-width: $screen-t) {
+      padding: 15px;
+    }
+  }
+
+  &__promo-button {
+    padding: 15px;
+  }
+}

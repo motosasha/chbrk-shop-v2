@@ -1,0 +1,52 @@
+//- Все примеси в этом файле должны начинаться c имени блока (panel)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin panel(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +panel("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " panel--" + modsList[i].trim();
+      }
+    }
+
+  .panel(class=allMods)&attributes(attributes)
+    .panel__header
+      .panel__inner
+        h2.panel__title Корзина
+        if isEmptyCart
+          .panel__amount Предметов: #[span 0]
+        else
+          .panel__amount Предметов: #[span 2]
+      button.panel__close
+        svg.panel__icon
+          use(href=path.icon + "icon__close")
+    .panel__scroll
+      .panel__body
+        if isEmptyCart
+          .panel__filler Нет продуктов
+        else
+          ul.panel__list
+            each item, index in json.cart
+              li.panel__item
+                +cart-card(item, index)
+    if !isEmptyCart
+      .panel__footer.panel__footer--cart
+        form.panel__cart-form#promo-form
+          input.input.panel__input#promoField(type="text", placeholder="Промокод", required)
+          button.button.button--primary.panel__promo-button(type="submit") Применить
+        .panel__cart-total
+          .panel__cart-total-title К оплате:
+          .panel__cart-total-price #[span 61] ₽
+        .panel__cart-actions
+          button.button.button--primary.panel__button Купить
+          button.button.button--secondary.panel__button Очистить

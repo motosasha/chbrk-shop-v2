@@ -1,4 +1,7 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/button-reset";
+@import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/text-styles";
 
 .page {
   $block-name: &; // #{$block-name}__element
@@ -12,6 +15,10 @@
     z-index: var(--z-index-header);
     flex: 0 0 auto;
     width: 100%;
+
+    .ovh & { // stylelint-disable-line
+      width: calc(100% - var(--css-scroll-size));
+    }
   }
 
   &__main {
@@ -29,5 +36,107 @@
 
   &__footer {
     flex: 0 0 auto;
+  }
+
+  &__cart {
+    position: fixed;
+    right: 0;
+    z-index: var(--z-index-panel);
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    transform: translateX(100%);
+    transition: height 0.25s ease, transform 0.25s ease;
+    will-change: transform;
+
+    @media screen and (max-width: $screen-m) {
+      right: auto;
+      bottom: 0;
+      max-width: none;
+      max-height: calc(100vh - 150px);
+      transform: translateY(100%);
+    }
+
+    [data-state="open-panel-cart"] & {
+      transform: translateX(0);
+
+      @media screen and (max-width: $screen-m) {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__cart-button {
+    @include button-reset(flex);
+
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: var(--z-index-cart);
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    color: var(--front-invert);
+    background-color: var(--purple-600);
+    border-radius: 50%;
+    transition: background-color var(--transition-default);
+
+    @media screen and (max-width: $screen-t) {
+      right: 25px;
+      bottom: 25px;
+      width: 50px;
+      height: 50px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--purple-700);
+      }
+    }
+
+    &[data-cart-counter]::before {
+      @include vk-button;
+      @include flex-center;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 25px;
+      height: 25px;
+      padding: 5px;
+      color: var(--color-white);
+      background-color: var(--orange-600);
+      border-radius: 12px;
+      transform: translate(25%, -25%);
+      content: attr(data-cart-counter);
+    }
+  }
+
+  &__cart-icon {
+    width: 35px;
+    height: 35px;
+    stroke-width: 2px;
+
+    @media screen and (max-width: $screen-t) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__darker {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-darker);
+    background-color: rgba(97 97 97 /30%);
+    opacity: 0;
+    backdrop-filter: blur(8px);
+    transition: opacity var(--transition-default);
+    pointer-events: none;
+
+    [data-state="open-panel-cart"] & {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 }

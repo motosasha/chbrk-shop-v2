@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (number)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin number(mods, max, value)
+
+  //- Принимает:
+  //-   mods        {string} - список модификаторов
+  //-   max         {string} - максимальное значение
+  //-   value       {string} - атрибут value
+  //- Вызов:
+        +number("some-mods", 10, "0")
+
+  -
+  // список модификаторов
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " number--" + modsList[i].trim();
+      }
+    }
+
+  filedset.number(class=allMods, data-quantity)&attributes(attributes)
+    button.number__button.number__button--sub(type="button") −
+    button.number__button.number__button--add(type="button") +
+    input.number__input(class= allMods, type="number", min="1", max= max ? max : null, value= value ? value : 1, pattern="[0-9]+")&attributes(
+      attributes)

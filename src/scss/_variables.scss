@@ -23,6 +23,9 @@
   --white-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, var(--white) 100%);
   --transition-default: 0.25s ease;
 
+  --z-index-panel: 5;
+  --z-index-darker: 4;
+  --z-index-cart: 3;
   --z-index-header: 2;
 
   --white: #ffffff;

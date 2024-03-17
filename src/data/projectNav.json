@@ -14,19 +14,9 @@
           "href": "shop"
         },
         {
-          "title": "Shop page (empty)",
-          "description": "страница магазина (пустая)",
-          "href": "shop-empty"
-        },
-        {
           "title": "Inventory page",
           "description": "страница инвентаря",
           "href": "inventory"
-        },
-        {
-          "title": "Inventory page (empty)",
-          "description": "страница инвентаря (пустая)",
-          "href": "inventory-empty"
         },
         {
           "title": "FAQ page",
@@ -97,6 +87,26 @@
           "title": "Edging (authorisation)",
           "description": "окантовка страницы (вход выполнен)",
           "href": "edging-authorisation"
+        },
+        {
+          "title": "Cart",
+          "description": "корзина",
+          "href": "cart"
+        },
+        {
+          "title": "Cart (empty)",
+          "description": "корзина пустая)",
+          "href": "cart-empty"
+        },
+        {
+          "title": "Shop page (empty)",
+          "description": "страница магазина (пустая)",
+          "href": "shop-empty"
+        },
+        {
+          "title": "Inventory page (empty)",
+          "description": "страница инвентаря (пустая)",
+          "href": "inventory-empty"
         },
         {
           "title": "Pagination states",

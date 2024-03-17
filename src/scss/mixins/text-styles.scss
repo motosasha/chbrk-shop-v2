@@ -150,3 +150,9 @@
   font-size: clamp(0.9375rem, 0.6673rem + 0.9398vw, 1.25rem);
   line-height: 1.25;
 }
+
+@mixin number {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}

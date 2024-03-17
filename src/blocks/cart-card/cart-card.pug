@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cart-card)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin cart-card(data, index, mods)
+
+  //- Принимает:
+  //-   data    {object} - данные для карточки
+  //-   index   {number} - индекс
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cart-card(data, "some-mod")
+
+  -
+    // список модификаторов
+    var allMods = "";
+    if(typeof(mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " cart-card--" + modsList[i].trim();
+      }
+    }
+
+  .cart-card(class=allMods)&attributes(attributes)
+    - var number = (index + 1).toString().padStart(2, "0")
+    .cart-card__inner
+      img.cart-card__image(src= path.img + "shop__good--" + number + "-mini.webp", loading="lazy", alt= data.title)
+      .cart-card__info
+        .cart-card__title!= data.title
+        .cart-card__price #[span #{data.price}] ₽
+        +number("", 5)(class="cart-card__number")
+      button.cart-card__delete
+        svg.cart-card__icon
+          use(href=path.icon + "icon__trash")

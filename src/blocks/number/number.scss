@@ -1,0 +1,81 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/text-styles";
+
+.number {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 0 30px;
+  background-color: var(--back-primary);
+  border-radius: 20px;
+
+  &__input {
+    @include number;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+    font-family: var(--font-sans);
+    text-align: center;
+    border: none;
+    outline: none;
+    appearance: none;
+    pointer-events: none;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  &__button {
+    @include flex-center;
+    @include number;
+
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    aspect-ratio: 1 / 1;
+    max-width: 50px;
+    height: 100%;
+    color: var(--purple-600);
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-default), opacity var(--transition-default);
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: var(--color-grayscale-100);
+    }
+
+    &--sub {
+      left: 0;
+    }
+
+    &--add {
+      right: 0;
+    }
+
+    &--disabled,
+    &--disabled:hover {
+      color: var(--zinc-400);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+  }
+}

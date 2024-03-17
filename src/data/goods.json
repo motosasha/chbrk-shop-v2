@@ -6,7 +6,8 @@
   },
   {
     "title": "Fang",
-    "price": "32"
+    "price": "32",
+    "isInCart": true
   },
   {
     "title": "Battleaxe",

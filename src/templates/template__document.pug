@@ -7,6 +7,7 @@ include mixins.pug
 - var metaKeywords = "keywords"
 - var json = locals
 - var path = pugPaths
+- var isNav = nav
 
 block variables
 
@@ -16,6 +17,9 @@ html(class="no-js", lang="ru")
 
   body
     noscript У вас отключен JavaScript. Это пугает.
+
+    if isNav
+      include ../service/project-nav.pug
 
     .page
       h1.page__title(hidden) Cheburek shop

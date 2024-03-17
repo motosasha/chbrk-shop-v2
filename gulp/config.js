@@ -1,6 +1,6 @@
-let ghPagesUrl = `https://motosasha.github.io/chbrk-shop-v2/index.html`; // ghPagesUrl: https://[userName].github.io/[projectName]/index.html
-let ghRoot = process.env.MODE === "deploy" ? "/chbrk-shop-v2/": "/";
-let pathToPrefix = ``;
+const ghPagesUrl = `https://motosasha.github.io/chbrk-shop-v2/index.html`; // ghPagesUrl: https://[userName].github.io/[projectName]/index.html
+const ghRoot = process.env.MODE === "deploy" ? "/chbrk-shop-v2/": "/";
+const pathToPrefix = ``;
 
 const htmlPathObj = {
   js: ``,
@@ -10,7 +10,6 @@ const htmlPathObj = {
 };
 
 const cssPathObj = {
-  js: ``,
   css: ``,
   img: ``,
   fonts: ``,

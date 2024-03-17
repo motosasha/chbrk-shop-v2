@@ -22,8 +22,7 @@ mixin shop-tile(data, index, mods)
     }
 
   .shop-tile(class=allMods, title!= data.title)&attributes(attributes)
-    -
-      var number = (index + 1).toString().padStart(2, "0")
+    - var number = (index + 1).toString().padStart(2, "0")
     a.shop-tile__miniature(href= path.img + "shop__good--" + number + ".webp", data-glightbox, data-gallery="goods-gallery-" + number)
       img.shop-tile__image(src= path.img + "shop__good--" + number + "-mini.webp", loading="lazy", alt= data.title)
     .shop-tile__inner

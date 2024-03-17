@@ -20,6 +20,11 @@ html {
   &.glightbox-open {
     overflow: inherit;
   }
+
+  &.ovh {
+    overflow: hidden;
+    padding-right: var(--css-scroll-size);
+  }
 }
 
 body {

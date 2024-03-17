@@ -1,0 +1,76 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/button-reset";
+@import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/text-styles";
+
+.cart-card {
+  $block-name: &; // #{$block-name}__element
+
+  overflow: hidden;
+  background: var(--zinc-100);
+  border-radius: 15px;
+
+  &__inner {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 25px 0 0;
+  }
+
+  &__image {
+    width: auto;
+    height: 120px;
+    border-radius: 2px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-self: stretch;
+    padding: 15px;
+  }
+
+  &__title {
+    @include shop-tile-title;
+
+    width: 100%;
+    overflow: hidden;
+    color: var(--orange-600);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__price {
+    @include body;
+
+    font-weight: 700;
+  }
+
+  :is(&) &__number {
+    width: 120px;
+    height: 40px;
+    margin-top: auto;
+  }
+
+  &__delete {
+    @include button-reset;
+
+    margin-left: auto;
+    color: var(--purple-600);
+    transition: color var(--transition-default);
+    appearance: none;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--orange-600);
+      }
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    stroke-width: 2px;
+  }
+}
